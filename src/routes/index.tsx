@@ -233,7 +233,7 @@ function HomePage() {
         <div className="mx-auto grid max-w-7xl gap-6 px-6 md:grid-cols-4 md:px-8">
           {[
             { icon: Clock, t: "24-Hour Laboratory", d: "Walk-in any time, day or night." },
-            { icon: Home, t: "Free Home Collection", d: "Trained phlebotomist at your door." },
+            { icon: HomeIcon, t: "Free Home Collection", d: "Trained phlebotomist at your door." },
             { icon: Cpu, t: "Fully Automated", d: "Cell counter & auto analyser." },
             { icon: ShieldCheck, t: "CMC Certified", d: "National-grade quality." },
           ].map((x) => (
