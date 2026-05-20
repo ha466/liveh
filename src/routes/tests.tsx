@@ -84,9 +84,19 @@ function TestsPage() {
                     {savings > 0 && (
                       <div className="mt-1 inline-block rounded-full bg-gold/15 px-2.5 py-0.5 text-xs font-bold text-gold">Save ₹{savings.toLocaleString()}</div>
                     )}
-                    <Link to="/appointments" className={`mt-4 block rounded-md px-4 py-2.5 text-center text-sm font-semibold transition ${p.featured ? "bg-gold text-navy hover:brightness-110" : "bg-primary text-primary-foreground hover:brightness-110"}`}>
-                      Book Now
-                    </Link>
+                    <div className="mt-4 grid grid-cols-2 gap-2">
+                      <Link to="/appointments" className={`rounded-md px-3 py-2.5 text-center text-sm font-semibold transition ${p.featured ? "bg-gold text-navy hover:brightness-110" : "bg-primary text-primary-foreground hover:brightness-110"}`}>
+                        Book Now
+                      </Link>
+                      <a
+                        href={waForPackage(p.name, p.price)}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center justify-center gap-1 rounded-md bg-[#25D366] px-3 py-2.5 text-sm font-semibold text-white hover:brightness-110"
+                      >
+                        <MessageCircle className="h-4 w-4" /> WhatsApp
+                      </a>
+                    </div>
                   </div>
                 </div>
               );
@@ -126,12 +136,21 @@ function TestsPage() {
             <div className="grid gap-3 md:grid-cols-2">
               {filtered.map((t) => (
                 <div key={t.name} className="group flex items-center justify-between gap-4 rounded-lg border-l-4 border-transparent bg-white p-4 shadow-card transition hover:border-teal hover:shadow-card-hover">
-                  <div>
+                  <div className="min-w-0">
                     <div className="font-semibold text-navy">{t.name}</div>
                     <span className="mt-1 inline-block rounded-full bg-soft-blue px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-teal">{t.category}</span>
                   </div>
-                  <div className="shrink-0 text-right">
+                  <div className="flex shrink-0 items-center gap-3">
                     <div className="text-xl font-bold text-teal">₹{t.price}</div>
+                    <a
+                      href={waForTest(t.name, t.price)}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`Book ${t.name} on WhatsApp`}
+                      className="grid h-9 w-9 place-items-center rounded-md bg-[#25D366] text-white hover:brightness-110"
+                    >
+                      <MessageCircle className="h-4 w-4" />
+                    </a>
                   </div>
                 </div>
               ))}
