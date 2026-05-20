@@ -2,7 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { Layout } from "@/components/Layout";
 import { categories, packages, tests } from "@/data/lab";
-import { Check, Search } from "lucide-react";
+import { Check, Search, MessageCircle } from "lucide-react";
+import { waForPackage, waForTest } from "@/lib/whatsapp";
 
 export const Route = createFileRoute("/tests")({
   head: () => ({
