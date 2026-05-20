@@ -4,7 +4,13 @@ import { lab, packages } from "@/data/lab";
 import {
   ShieldCheck, Clock, Home as HomeIcon, Cpu, Phone, MapPin, ArrowRight,
   Droplet, FlaskConical, Activity, HeartPulse, Microscope, Beaker, Check,
+  MessageCircle,
 } from "lucide-react";
+import heroBg from "@/assets/lab/background.png";
+import cbcImg from "@/assets/lab/cbc.webp";
+import biochemImg from "@/assets/lab/biochem.webp";
+import proteinImg from "@/assets/lab/protein.webp";
+import { waForPackage } from "@/lib/whatsapp";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -30,11 +36,18 @@ const featured = packages.filter((p) => ["basic", "regular", "executive", "premi
 function HomePage() {
   return (
     <>
-      {/* HERO */}
-      <section className="relative overflow-hidden bg-gradient-hero medical-pattern text-white">
+      {/* HERO — real lab photo background with navy/teal overlay */}
+      <section
+        className="relative overflow-hidden text-white"
+        style={{
+          backgroundImage: `linear-gradient(135deg, color-mix(in oklab, var(--color-navy) 88%, transparent), color-mix(in oklab, var(--color-teal) 78%, transparent)), url(${heroBg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 pt-16 pb-24 md:grid-cols-2 md:px-8 md:pt-24 md:pb-32">
           <div>
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-gold/15 px-3 py-1 text-xs font-semibold text-gold ring-1 ring-gold/40">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-gold/20 px-3 py-1 text-xs font-semibold text-gold ring-1 ring-gold/40">
               <ShieldCheck className="h-3.5 w-3.5" /> CMC Quality Centre Certified
             </span>
             <h1 className="mt-5 text-4xl font-bold leading-[1.1] text-white md:text-6xl">
@@ -51,8 +64,14 @@ function HomePage() {
               <Link to="/appointments" className="rounded-md bg-white px-6 py-3 text-sm font-semibold text-navy shadow-button transition hover:scale-[1.02]">
                 Book Appointment
               </Link>
+              <a
+                href={`tel:+91${lab.phones[0]}`}
+                className="inline-flex items-center gap-2 rounded-md bg-gold px-6 py-3 text-sm font-semibold text-navy shadow-button transition hover:scale-[1.02]"
+              >
+                <Phone className="h-4 w-4" /> Call {lab.phones[0]}
+              </a>
               <Link to="/tests" className="rounded-md border border-white/40 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
-                View Tests & Packages
+                View Tests
               </Link>
             </div>
             <div className="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-sm text-light-cyan">
@@ -62,7 +81,7 @@ function HomePage() {
             </div>
           </div>
 
-          {/* Right illustration card */}
+          {/* Right stat card */}
           <div className="relative hidden md:block">
             <div className="absolute -top-8 -left-8 h-32 w-32 rounded-full bg-teal/40 blur-3xl" />
             <div className="absolute -bottom-8 -right-4 h-40 w-40 rounded-full bg-gold/20 blur-3xl" />
@@ -109,26 +128,18 @@ function HomePage() {
         </div>
       </section>
 
-      {/* ABOUT */}
+      {/* ABOUT with real equipment images */}
       <section className="mx-auto max-w-7xl px-6 py-20 md:px-8">
         <div className="grid items-center gap-12 md:grid-cols-2">
-          <div className="relative">
-            <div className="aspect-[4/3] rounded-2xl bg-gradient-hero p-10 shadow-card-hover">
-              <div className="grid h-full grid-cols-2 gap-4">
-                <div className="rounded-xl bg-white/15 p-5 backdrop-blur">
-                  <Microscope className="h-8 w-8 text-light-cyan" />
-                  <div className="mt-3 text-sm font-semibold text-white">Auto Cell Counter</div>
-                </div>
-                <div className="rounded-xl bg-white/15 p-5 backdrop-blur">
-                  <Cpu className="h-8 w-8 text-light-cyan" />
-                  <div className="mt-3 text-sm font-semibold text-white">Auto Analyser</div>
-                </div>
-                <div className="col-span-2 rounded-xl bg-white/20 p-5 backdrop-blur">
-                  <div className="text-xs uppercase tracking-wider text-light-cyan">Laboratory Director</div>
-                  <div className="mt-1 text-lg font-bold text-white">{lab.owner.name}</div>
-                  <div className="text-sm text-light-cyan">{lab.owner.qual}</div>
-                </div>
-              </div>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="col-span-2 overflow-hidden rounded-2xl bg-soft-blue shadow-card">
+              <img src={cbcImg} alt="Biobase CBC Auto Hematology Analyzer" className="h-56 w-full object-contain p-4" />
+            </div>
+            <div className="overflow-hidden rounded-2xl bg-soft-blue shadow-card">
+              <img src={biochemImg} alt="Mispa FAB 120 Auto Biochemistry Analyzer" className="h-40 w-full object-contain p-3" />
+            </div>
+            <div className="overflow-hidden rounded-2xl bg-soft-blue shadow-card">
+              <img src={proteinImg} alt="Mispa i3 Protein Analyzer" className="h-40 w-full object-contain p-3" />
             </div>
           </div>
           <div>
@@ -136,8 +147,8 @@ function HomePage() {
             <h2 className="mt-2 text-3xl font-bold md:text-4xl">A diagnostic centre Udumalaipettai trusts.</h2>
             <p className="mt-5 text-muted-foreground">
               Live Life Healthcare Lab combines advanced automated technology with a patient-first approach.
-              Every biochemical test is processed on a Fully Automated Cell Counter and Computerised Auto Analyser —
-              delivering accurate, fast, and reliable results.
+              Every biochemical test is processed on our Mispa FAB 120 Auto Analyser, Mispa i3 Protein Analyser,
+              and Biobase 5-part CBC counter — delivering accurate, fast, and reliable results.
             </p>
             <p className="mt-3 text-muted-foreground">
               A 24-hour facility plus free home sample collection makes diagnostic care accessible to elderly,
@@ -209,14 +220,24 @@ function HomePage() {
                   <span className={`text-3xl font-bold ${p.featured ? "text-gold" : "text-teal"}`}>₹{p.price.toLocaleString()}</span>
                   {p.mrp > 0 && <span className={`text-sm line-through ${p.featured ? "text-white/50" : "text-muted-foreground"}`}>₹{p.mrp.toLocaleString()}</span>}
                 </div>
-                <Link
-                  to="/appointments"
-                  className={`mt-4 block rounded-md px-4 py-2.5 text-center text-sm font-semibold transition ${
-                    p.featured ? "bg-gold text-navy hover:brightness-110" : "bg-primary text-primary-foreground hover:brightness-110"
-                  }`}
-                >
-                  Book Package
-                </Link>
+                <div className="mt-4 grid grid-cols-2 gap-2">
+                  <Link
+                    to="/appointments"
+                    className={`rounded-md px-3 py-2.5 text-center text-xs font-semibold transition ${
+                      p.featured ? "bg-gold text-navy hover:brightness-110" : "bg-primary text-primary-foreground hover:brightness-110"
+                    }`}
+                  >
+                    Book
+                  </Link>
+                  <a
+                    href={waForPackage(p.name, p.price)}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center justify-center gap-1 rounded-md bg-[#25D366] px-3 py-2.5 text-center text-xs font-semibold text-white hover:brightness-110"
+                  >
+                    <MessageCircle className="h-3.5 w-3.5" /> WhatsApp
+                  </a>
+                </div>
               </div>
             </div>
           ))}
@@ -265,9 +286,19 @@ function HomePage() {
                   <span className="text-3xl font-bold text-gold">₹{p.price}</span>
                   <span className="text-sm text-white/60 line-through">₹{p.mrp}</span>
                 </div>
-                <Link to="/appointments" className="mt-4 inline-block rounded-md bg-white px-5 py-2.5 text-sm font-semibold text-navy">
-                  Book Diabetes Test
-                </Link>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  <Link to="/appointments" className="rounded-md bg-white px-4 py-2 text-sm font-semibold text-navy">
+                    Book Now
+                  </Link>
+                  <a
+                    href={waForPackage(p.name, p.price)}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-1.5 rounded-md bg-[#25D366] px-4 py-2 text-sm font-semibold text-white"
+                  >
+                    <MessageCircle className="h-4 w-4" /> WhatsApp
+                  </a>
+                </div>
               </div>
             ))}
           </div>
