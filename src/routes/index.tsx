@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
 import { lab, packages } from "@/data/lab";
 import {
-  ShieldCheck, Clock, Home, Cpu, Phone, MapPin, ArrowRight,
+  ShieldCheck, Clock, Home as HomeIcon, Cpu, Phone, MapPin, ArrowRight,
   Droplet, FlaskConical, Activity, HeartPulse, Microscope, Beaker, Check,
 } from "lucide-react";
 
