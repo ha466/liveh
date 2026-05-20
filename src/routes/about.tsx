@@ -1,7 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
 import { lab } from "@/data/lab";
-import { Award, Cpu, Microscope, Home, Clock, ShieldCheck, Target, Eye } from "lucide-react";
+import { Award, ShieldCheck, Home, Clock, Target, Eye } from "lucide-react";
+import owner from "@/assets/lab/owner.png";
+import cbc from "@/assets/lab/cbc.webp";
+import biochem from "@/assets/lab/biochem.webp";
+import protein from "@/assets/lab/protein.webp";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -12,6 +16,24 @@ export const Route = createFileRoute("/about")({
   }),
   component: () => <Layout><About /></Layout>,
 });
+
+const equipment = [
+  {
+    img: cbc,
+    name: "5-Part CBC Auto Hematology Analyzer",
+    desc: "Biobase fully automated cell counter for precise CBC, ESR and platelet studies.",
+  },
+  {
+    img: biochem,
+    name: "Mispa FAB 120 Auto Biochemistry Analyzer",
+    desc: "Fully automatic biochemistry analyzer for lipid, liver, kidney and diabetic panels.",
+  },
+  {
+    img: protein,
+    name: "Mispa i3 Protein Analyzer",
+    desc: "Immunoturbidimetric protein analyzer for HbA1C, CRP, microalbumin and specific proteins.",
+  },
+];
 
 function About() {
   return (
@@ -40,14 +62,22 @@ function About() {
               any hour, any day.
             </p>
           </div>
-          <div className="rounded-2xl bg-soft-blue p-8 shadow-card">
-            <div className="text-xs font-semibold uppercase tracking-widest text-teal">Laboratory Director</div>
-            <div className="mt-3 text-2xl font-bold text-navy">{lab.owner.name}</div>
+
+          <div className="rounded-2xl bg-soft-blue p-6 shadow-card">
+            <div className="overflow-hidden rounded-xl bg-white">
+              <img
+                src={owner}
+                alt={`${lab.owner.name}, Laboratory Director`}
+                className="h-72 w-full object-cover object-top"
+              />
+            </div>
+            <div className="mt-5 text-xs font-semibold uppercase tracking-widest text-teal">Laboratory Director</div>
+            <div className="mt-1 text-2xl font-bold text-navy">{lab.owner.name}</div>
             <div className="text-sm text-muted-foreground">{lab.owner.qual}</div>
-            <div className="mt-5 inline-flex items-center gap-2 rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-teal shadow-sm">
+            <div className="mt-4 inline-flex items-center gap-2 rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-teal shadow-sm">
               <Award className="h-4 w-4" /> Head of Laboratory Operations & Quality
             </div>
-            <p className="mt-5 text-sm text-muted-foreground">
+            <p className="mt-4 text-sm italic text-muted-foreground">
               "Our mission is simple — every patient deserves accurate results, delivered on time, at a price they
               can afford."
             </p>
@@ -57,20 +87,23 @@ function About() {
 
       <section className="bg-soft-blue py-20">
         <div className="mx-auto max-w-7xl px-6 md:px-8">
-          <h2 className="text-center text-3xl font-bold">Technology & Certifications</h2>
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              { i: Microscope, t: "Fully Automated Cell Counter", d: "Precise haematology results, every time." },
-              { i: Cpu, t: "Computerised Auto Analyser", d: "Reliable biochemistry across all panels." },
-              { i: ShieldCheck, t: "CMC Quality Programme", d: "National-grade quality assurance." },
-              { i: Home, t: "Free Home Collection", d: "We come to your doorstep." },
-            ].map((x) => (
-              <div key={x.t} className="rounded-xl bg-white p-6 shadow-card">
-                <div className="grid h-11 w-11 place-items-center rounded-lg bg-gradient-hero text-white">
-                  <x.i className="h-5 w-5" />
+          <div className="text-center">
+            <div className="text-xs font-semibold uppercase tracking-widest text-teal">Our Equipment</div>
+            <h2 className="mt-2 text-3xl font-bold">Fully Automated Diagnostic Technology</h2>
+            <p className="mx-auto mt-3 max-w-2xl text-muted-foreground">
+              Every test is processed on calibrated, fully automated analysers — no manual readings, no human error.
+            </p>
+          </div>
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {equipment.map((e) => (
+              <div key={e.name} className="overflow-hidden rounded-2xl bg-white shadow-card transition hover:-translate-y-1 hover:shadow-card-hover">
+                <div className="aspect-[4/3] overflow-hidden bg-soft-blue">
+                  <img src={e.img} alt={e.name} className="h-full w-full object-contain p-4" loading="lazy" />
                 </div>
-                <h3 className="mt-4 text-base font-bold">{x.t}</h3>
-                <p className="mt-1 text-sm text-muted-foreground">{x.d}</p>
+                <div className="p-5">
+                  <h3 className="text-base font-bold text-navy">{e.name}</h3>
+                  <p className="mt-2 text-sm text-muted-foreground">{e.desc}</p>
+                </div>
               </div>
             ))}
           </div>
