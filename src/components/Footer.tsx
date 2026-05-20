@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
-import { Activity, MapPin, Phone, Clock, ShieldCheck } from "lucide-react";
+import { MapPin, Phone, Clock, ShieldCheck } from "lucide-react";
 import { lab } from "@/data/lab";
+import logo from "@/assets/lab/logo.png";
 
 export function Footer() {
   return (
@@ -8,9 +9,7 @@ export function Footer() {
       <div className="mx-auto grid max-w-7xl gap-10 px-6 py-14 md:grid-cols-4 md:px-8">
         <div className="md:col-span-1">
           <div className="flex items-center gap-2.5">
-            <div className="grid h-10 w-10 place-items-center rounded-lg bg-teal">
-              <Activity className="h-5 w-5 text-white" />
-            </div>
+            <img src={logo} alt="Live Life Healthcare Lab" className="h-11 w-11 rounded-lg bg-white object-contain p-1" />
             <div className="leading-tight">
               <div className="font-bold text-white">{lab.name}</div>
               <div className="tamil text-xs text-light-cyan">{lab.nameTa}</div>

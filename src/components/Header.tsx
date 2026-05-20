@@ -1,7 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { Menu, X, Phone, Activity } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 import { lab } from "@/data/lab";
+import logo from "@/assets/lab/logo.png";
 
 const nav = [
   { to: "/", label: "Home" },
@@ -31,9 +32,7 @@ export function Header() {
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 md:px-8">
         <Link to="/" className="flex items-center gap-2.5">
-          <div className="grid h-10 w-10 place-items-center rounded-lg bg-gradient-hero shadow-button">
-            <Activity className="h-5 w-5 text-white" />
-          </div>
+          <img src={logo} alt="Live Life Healthcare Lab logo" className="h-11 w-11 rounded-lg object-contain bg-white ring-1 ring-border" />
           <div className="leading-tight">
             <div className="text-[15px] font-bold text-navy">{lab.name}</div>
             <div className="tamil text-[11px] text-tamil-accent">{lab.nameTa}</div>
