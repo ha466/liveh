@@ -97,10 +97,6 @@ export const categories = [
   "Cardiology & Pulmonology",
 ];
 
-export const categories = [
-  "All", "Haematology", "Biochemistry", "Electrolytes",
-  "Urine", "Serology", "Thyroid & Hormones", "Microbiology",
-];
 
 export type Pkg = {
   slug: string;
