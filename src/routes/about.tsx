@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
 import { lab } from "@/data/lab";
-import { Award, ShieldCheck, Home, Clock, Target, Eye } from "lucide-react";
+import { Award, ShieldCheck, Home, Clock, Target, Eye, MapPin } from "lucide-react";
 import owner from "@/assets/lab/owner.png";
 import cbc from "@/assets/lab/cbc.webp";
 import biochem from "@/assets/lab/biochem.webp";
