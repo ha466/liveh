@@ -51,7 +51,7 @@ export function Footer() {
 
         <div>
           <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-white">Address</h4>
-          <p className="flex gap-2 text-sm leading-relaxed">
+          <a href={lab.mapsUrl} target="_blank" rel="noreferrer" className="flex gap-2 text-sm leading-relaxed hover:text-light-cyan">
             <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-teal" />
             <span>
               {lab.address.line1},<br />
@@ -59,7 +59,10 @@ export function Footer() {
               {lab.address.line3},<br />
               {lab.address.city} — {lab.address.pin}
             </span>
-          </p>
+          </a>
+          <a href={lab.mapsUrl} target="_blank" rel="noreferrer" className="mt-3 inline-block text-xs font-semibold text-gold hover:underline">
+            View on Google Maps →
+          </a>
         </div>
       </div>
       <div className="border-t border-white/10">

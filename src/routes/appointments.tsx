@@ -120,14 +120,22 @@ function Appointments() {
                     <span className="text-xs text-white/60">· {i === 0 ? "Primary" : i === 1 ? "Secondary" : "Tertiary"}</span>
                   </a>
                 ))}
-                <div className="flex items-start gap-2 text-white/85">
-                  <MapPin className="mt-0.5 h-4 w-4 text-gold" />
+                <a href={lab.mapsUrl} target="_blank" rel="noreferrer" className="flex items-start gap-2 text-white/85 hover:text-light-cyan">
+                  <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
                   <span>{lab.address.line1}, {lab.address.line2}, {lab.address.line3}, {lab.address.city} — {lab.address.pin}</span>
-                </div>
+                </a>
                 <div className="flex items-center gap-2 text-white/85">
                   <Clock className="h-4 w-4 text-gold" /> Open 24 hours · 7 days
                 </div>
               </div>
+              <a
+                href={lab.mapsUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-4 inline-block rounded-md bg-gold px-4 py-2 text-xs font-semibold text-navy hover:brightness-110"
+              >
+                Open in Google Maps
+              </a>
             </div>
 
             <div className="rounded-2xl bg-soft-blue p-6 shadow-card">

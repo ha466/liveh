@@ -335,7 +335,7 @@ function HomePage() {
               </div>
             </div>
             <a
-              href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${lab.address.line1}, ${lab.address.city}, ${lab.address.pin}`)}`}
+              href={lab.mapsUrl}
               target="_blank" rel="noreferrer"
               className="rounded-md bg-navy px-5 py-2.5 text-sm font-semibold text-white hover:brightness-110"
             >
