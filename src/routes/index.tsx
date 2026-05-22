@@ -40,9 +40,10 @@ function HomePage() {
       <section
         className="relative overflow-hidden text-white"
         style={{
-          backgroundImage: `linear-gradient(135deg, color-mix(in oklab, var(--color-navy) 88%, transparent), color-mix(in oklab, var(--color-teal) 78%, transparent)), url(${heroBg})`,
+          backgroundImage: `linear-gradient(135deg, color-mix(in oklab, var(--navy) 65%, transparent), color-mix(in oklab, var(--teal) 55%, transparent)), url(${heroBg})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
+          backgroundColor: "var(--navy)",
         }}
       >
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 pt-16 pb-24 md:grid-cols-2 md:px-8 md:pt-24 md:pb-32">
