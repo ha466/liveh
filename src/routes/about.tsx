@@ -61,6 +61,14 @@ function About() {
               home sample collection makes diagnostic care accessible to elderly, bedridden, and busy patients —
               any hour, any day.
             </p>
+            <a
+              href={lab.mapsUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-5 inline-flex items-center gap-2 rounded-md bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-button hover:brightness-110"
+            >
+              <MapPin className="h-4 w-4" /> View on Google Maps
+            </a>
           </div>
 
           <div className="rounded-2xl bg-soft-blue p-6 shadow-card">
