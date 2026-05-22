@@ -78,7 +78,7 @@ function Contact() {
                 <div className="flex items-center gap-2 text-white/85"><Mail className="h-4 w-4 text-gold" /> Email coming soon</div>
               </div>
               <a
-                href={`https://www.google.com/maps/search/?api=1&query=${mapsQ}`}
+                href={lab.mapsUrl}
                 target="_blank" rel="noreferrer"
                 className="mt-5 inline-block rounded-md bg-gold px-5 py-2.5 text-sm font-semibold text-navy hover:brightness-110"
               >

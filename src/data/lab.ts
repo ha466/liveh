@@ -12,6 +12,7 @@ export const lab = {
     pin: "642126",
     state: "Tamil Nadu, India",
   },
+  mapsUrl: "https://maps.app.goo.gl/QCwFzbpas4AccvJE7",
   owner: { name: "S. SatheeshKumar", qual: "DMLT., DXT." },
 };
 
