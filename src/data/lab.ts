@@ -86,12 +86,17 @@ export const tests: Test[] = [
   { name: "Pus Culture & Sensitivity", price: 450, category: "Microbiology" },
   { name: "Blood Culture & Sensitivity", price: 850, category: "Microbiology" },
   { name: "FNAC", price: 650, category: "Microbiology" },
+  // Cardiology & Pulmonology
+  { name: "ECG (Electrocardiogram)", price: 200, category: "Cardiology & Pulmonology" },
+  { name: "PFT (Pulmonary Function Test)", price: 500, category: "Cardiology & Pulmonology" },
 ];
 
 export const categories = [
   "All", "Haematology", "Biochemistry", "Electrolytes",
   "Urine", "Serology", "Thyroid & Hormones", "Microbiology",
+  "Cardiology & Pulmonology",
 ];
+
 
 export type Pkg = {
   slug: string;
