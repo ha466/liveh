@@ -15,8 +15,10 @@ import { waForPackage } from "@/lib/whatsapp";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Live Life Healthcare Lab — 24/7 Diagnostic Lab, Udumalaipettai" },
-      { name: "description", content: "Fully automated diagnostic lab in Udumalaipettai. Free home collection, 24-hour service, health packages from ₹550. CMC Quality Centre certified." },
+      { title: "24/7 Diagnostic Lab in Udumalaipettai — Live Life" },
+      { name: "description", content: "Fully automated diagnostic lab in Udumalaipettai. Free home collection, 24-hour service, health packages from ₹550." },
+      { property: "og:title", content: "24/7 Diagnostic Lab in Udumalaipettai — Live Life" },
+      { property: "og:description", content: "Free home blood collection. 96+ tests, packages from ₹550. CMC Quality Centre certified." },
     ],
   }),
   component: Home,
