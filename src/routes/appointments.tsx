@@ -7,8 +7,10 @@ import { Phone, MapPin, Clock, Info, CheckCircle2 } from "lucide-react";
 export const Route = createFileRoute("/appointments")({
   head: () => ({
     meta: [
-      { title: "Book an Appointment — Live Life Healthcare Lab" },
-      { name: "description", content: "Book a lab visit or free home sample collection. Available 24/7 in Udumalaipettai. Call 9751504558 or schedule online." },
+      { title: "Book an Appointment — Live Life Lab" },
+      { name: "description", content: "Book a lab visit or free home sample collection in Udumalaipettai. Available 24/7. Call 9751504558 or schedule online." },
+      { property: "og:title", content: "Book an Appointment — Live Life Lab" },
+      { property: "og:description", content: "Walk-in 24/7 or request free home collection in Udumalaipettai." },
     ],
   }),
   component: () => <Layout><Appointments /></Layout>,
