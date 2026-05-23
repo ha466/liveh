@@ -8,8 +8,10 @@ import { waForPackage, waForTest } from "@/lib/whatsapp";
 export const Route = createFileRoute("/tests")({
   head: () => ({
     meta: [
-      { title: "Tests & Health Packages — Live Life Healthcare Lab" },
-      { name: "description", content: "Full price list of laboratory tests and curated health packages from ₹550. Haematology, biochemistry, thyroid, microbiology and more." },
+      { title: "Tests & Health Packages — Live Life Lab" },
+      { name: "description", content: "Full price list of lab tests and curated health packages from ₹550. Haematology, biochemistry, thyroid, microbiology and more." },
+      { property: "og:title", content: "Tests & Health Packages — Live Life Lab" },
+      { property: "og:description", content: "Transparent pricing for 2026–2027. Packages from ₹550, individual tests from ₹40." },
     ],
   }),
   component: () => <Layout><TestsPage /></Layout>,
