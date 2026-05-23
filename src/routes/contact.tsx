@@ -7,8 +7,10 @@ import { Phone, MapPin, Clock, Mail, Send, CheckCircle2 } from "lucide-react";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact Us — Live Life Healthcare Lab, Udumalaipettai" },
-      { name: "description", content: "Call 9751504558 / 9751744558 / 8190004558 or visit us at 14, Aarthi Complex, Kizhpuram, Udumalaipettai — open 24/7." },
+      { title: "Contact — Live Life Healthcare Lab" },
+      { name: "description", content: "Call 9751504558, 9751744558 or 8190004558. Visit us at 14, Aarthi Complex, Kizhpuram, Udumalaipettai — open 24/7." },
+      { property: "og:title", content: "Contact — Live Life Healthcare Lab" },
+      { property: "og:description", content: "Three 24/7 contact numbers and our Udumalaipettai address." },
     ],
   }),
   component: () => <Layout><Contact /></Layout>,
