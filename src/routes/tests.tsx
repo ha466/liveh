@@ -59,6 +59,7 @@ function TestsPage() {
 
       {tab === "packages" ? (
         <section className="mx-auto max-w-7xl px-6 py-16 md:px-8">
+          <h2 className="mb-8 text-2xl font-bold text-navy">Available Health Packages</h2>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {packages.map((p) => {
               const savings = p.mrp > 0 ? p.mrp - p.price : 0;
