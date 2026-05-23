@@ -58,9 +58,9 @@ function Contact() {
                 onSubmit={(e) => { e.preventDefault(); setDone(true); }}
                 className="mt-6 space-y-4"
               >
-                <input required placeholder="Your name" className="input" />
-                <input required type="tel" placeholder="Phone number" className="input" />
-                <textarea required rows={5} placeholder="How can we help?" className="input" />
+                <input required aria-label="Your name" placeholder="Your name" className="input" />
+                <input required aria-label="Phone number" type="tel" placeholder="Phone number" className="input" />
+                <textarea required aria-label="Your message" rows={5} placeholder="How can we help?" className="input" />
                 <button className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-button hover:brightness-110">
                   <Send className="h-4 w-4" /> Send Message
                 </button>
