@@ -24,7 +24,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-white">Explore</h4>
+          <h2 className="mb-4 text-sm font-semibold uppercase tracking-wider text-white">Explore</h2>
           <ul className="space-y-2 text-sm">
             <li><Link to="/" className="hover:text-light-cyan">Home</Link></li>
             <li><Link to="/about" className="hover:text-light-cyan">About</Link></li>
@@ -36,7 +36,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-white">Reach Us</h4>
+          <h2 className="mb-4 text-sm font-semibold uppercase tracking-wider text-white">Reach Us</h2>
           <ul className="space-y-3 text-sm">
             {lab.phones.map((p) => (
               <li key={p}>
@@ -50,7 +50,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-white">Address</h4>
+          <h2 className="mb-4 text-sm font-semibold uppercase tracking-wider text-white">Address</h2>
           <a href={lab.mapsUrl} target="_blank" rel="noreferrer" className="flex gap-2 text-sm leading-relaxed hover:text-light-cyan">
             <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-teal" />
             <span>
