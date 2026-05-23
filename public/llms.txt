@@ -1,0 +1,12 @@
+# Live Life Healthcare Lab
+
+> CMC-certified 24/7 diagnostic and pathology laboratory in Udumalaipettai, Tamil Nadu. Free home blood sample collection and fully automated testing.
+
+## Pages
+
+- [Home](/): Overview of services, packages and 24/7 contact options.
+- [About](/about): Lab story, director, equipment and CMC certification.
+- [Tests & Packages](/tests): Full price list of tests and curated health packages.
+- [Book Appointment](/appointments): Walk-in or free home collection booking.
+- [FAQ](/faq): Hours, home collection, fasting, results, accreditation.
+- [Contact](/contact): Phone numbers, address and directions.

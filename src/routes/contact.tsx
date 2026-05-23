@@ -7,8 +7,10 @@ import { Phone, MapPin, Clock, Mail, Send, CheckCircle2 } from "lucide-react";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact Us — Live Life Healthcare Lab, Udumalaipettai" },
-      { name: "description", content: "Call 9751504558 / 9751744558 / 8190004558 or visit us at 14, Aarthi Complex, Kizhpuram, Udumalaipettai — open 24/7." },
+      { title: "Contact — Live Life Healthcare Lab" },
+      { name: "description", content: "Call 9751504558, 9751744558 or 8190004558. Visit us at 14, Aarthi Complex, Kizhpuram, Udumalaipettai — open 24/7." },
+      { property: "og:title", content: "Contact — Live Life Healthcare Lab" },
+      { property: "og:description", content: "Three 24/7 contact numbers and our Udumalaipettai address." },
     ],
   }),
   component: () => <Layout><Contact /></Layout>,
@@ -56,9 +58,9 @@ function Contact() {
                 onSubmit={(e) => { e.preventDefault(); setDone(true); }}
                 className="mt-6 space-y-4"
               >
-                <input required placeholder="Your name" className="input" />
-                <input required type="tel" placeholder="Phone number" className="input" />
-                <textarea required rows={5} placeholder="How can we help?" className="input" />
+                <input required aria-label="Your name" placeholder="Your name" className="input" />
+                <input required aria-label="Phone number" type="tel" placeholder="Phone number" className="input" />
+                <textarea required aria-label="Your message" rows={5} placeholder="How can we help?" className="input" />
                 <button className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-button hover:brightness-110">
                   <Send className="h-4 w-4" /> Send Message
                 </button>

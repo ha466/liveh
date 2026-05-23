@@ -8,8 +8,10 @@ import { waForPackage, waForTest } from "@/lib/whatsapp";
 export const Route = createFileRoute("/tests")({
   head: () => ({
     meta: [
-      { title: "Tests & Health Packages — Live Life Healthcare Lab" },
-      { name: "description", content: "Full price list of laboratory tests and curated health packages from ₹550. Haematology, biochemistry, thyroid, microbiology and more." },
+      { title: "Tests & Health Packages — Live Life Lab" },
+      { name: "description", content: "Full price list of lab tests and curated health packages from ₹550. Haematology, biochemistry, thyroid, microbiology and more." },
+      { property: "og:title", content: "Tests & Health Packages — Live Life Lab" },
+      { property: "og:description", content: "Transparent pricing for 2026–2027. Packages from ₹550, individual tests from ₹40." },
     ],
   }),
   component: () => <Layout><TestsPage /></Layout>,
@@ -57,6 +59,7 @@ function TestsPage() {
 
       {tab === "packages" ? (
         <section className="mx-auto max-w-7xl px-6 py-16 md:px-8">
+          <h2 className="mb-8 text-2xl font-bold text-navy">Available Health Packages</h2>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {packages.map((p) => {
               const savings = p.mrp > 0 ? p.mrp - p.price : 0;
@@ -105,10 +108,13 @@ function TestsPage() {
         </section>
       ) : (
         <section className="mx-auto max-w-7xl px-6 py-16 md:px-8">
+          <h2 className="mb-6 text-2xl font-bold text-navy">Individual Tests & Pricing</h2>
           <div className="mb-6 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <div className="relative w-full md:max-w-sm">
+              <label htmlFor="test-search" className="sr-only">Search tests</label>
               <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
               <input
+                id="test-search"
                 value={q}
                 onChange={(e) => setQ(e.target.value)}
                 placeholder="Search tests..."
