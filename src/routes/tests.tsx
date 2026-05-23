@@ -108,10 +108,13 @@ function TestsPage() {
         </section>
       ) : (
         <section className="mx-auto max-w-7xl px-6 py-16 md:px-8">
+          <h2 className="mb-6 text-2xl font-bold text-navy">Individual Tests & Pricing</h2>
           <div className="mb-6 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <div className="relative w-full md:max-w-sm">
+              <label htmlFor="test-search" className="sr-only">Search tests</label>
               <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
               <input
+                id="test-search"
                 value={q}
                 onChange={(e) => setQ(e.target.value)}
                 placeholder="Search tests..."
