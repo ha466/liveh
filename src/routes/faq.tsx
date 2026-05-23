@@ -8,7 +8,23 @@ export const Route = createFileRoute("/faq")({
   head: () => ({
     meta: [
       { title: "FAQ — Live Life Healthcare Lab" },
-      { name: "description", content: "Common questions about lab hours, home collection, fasting, results, and accreditation at Live Life Healthcare Lab." },
+      { name: "description", content: "Answers about lab hours, home collection, fasting, results, and CMC accreditation at Live Life Healthcare Lab." },
+      { property: "og:title", content: "FAQ — Live Life Healthcare Lab" },
+      { property: "og:description", content: "Common questions about hours, home collection, fasting and results." },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqs.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
+        }),
+      },
     ],
   }),
   component: () => <Layout><FAQ /></Layout>,
