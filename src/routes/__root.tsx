@@ -77,6 +77,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Live Life Healthcare Lab" },
       { name: "twitter:card", content: "summary" },
+      { name: "google-site-verification", content: "hUqubOCT5M_fI471o5vU_WPFIetCvy-O4aftZZOMDSE" },
     ],
     scripts: [
       {
