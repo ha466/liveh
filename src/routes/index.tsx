@@ -139,13 +139,13 @@ function HomePage() {
         <div className="grid items-center gap-12 md:grid-cols-2">
           <div className="grid grid-cols-2 gap-4">
             <div className="col-span-2 overflow-hidden rounded-2xl bg-soft-blue shadow-card">
-              <img src={cbcImg} alt="Biobase CBC Auto Hematology Analyzer" className="h-56 w-full object-contain p-4" />
+              <img src={cbcImg} alt="Biobase CBC Auto Hematology Analyzer" width="550" height="550" className="h-56 w-full object-contain p-4" />
             </div>
             <div className="overflow-hidden rounded-2xl bg-soft-blue shadow-card">
-              <img src={biochemImg} alt="Mispa FAB 120 Auto Biochemistry Analyzer" className="h-40 w-full object-contain p-3" />
+              <img src={biochemImg} alt="Mispa FAB 120 Auto Biochemistry Analyzer" width="860" height="574" className="h-40 w-full object-contain p-3" />
             </div>
             <div className="overflow-hidden rounded-2xl bg-soft-blue shadow-card">
-              <img src={proteinImg} alt="Mispa i3 Protein Analyzer" className="h-40 w-full object-contain p-3" />
+              <img src={proteinImg} alt="Mispa i3 Protein Analyzer" width="860" height="759" className="h-40 w-full object-contain p-3" />
             </div>
           </div>
           <div>
