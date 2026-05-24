@@ -20,6 +20,9 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "24/7 Diagnostic Lab in Udumalaipettai — Live Life" },
       { property: "og:description", content: "Free home blood collection. 96+ tests, packages from ₹550. CMC Quality Centre certified." },
     ],
+    links: [
+      { rel: "preload", as: "image", href: heroBg, fetchpriority: "high" },
+    ],
   }),
   component: Home,
 });
