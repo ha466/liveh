@@ -72,8 +72,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Live Life Healthcare Lab — Udumalaipettai" },
-      { name: "description", content: "CMC-certified 24/7 diagnostic lab in Udumalaipettai. Free home blood collection and fully automated testing." },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Live Life Healthcare Lab" },
       { name: "twitter:card", content: "summary" },
