@@ -82,7 +82,7 @@ function TestsPage() {
                   <div className="mt-auto pt-6">
                     <div className="flex items-baseline gap-2">
                       <span className={`text-3xl font-bold ${p.featured ? "text-gold" : "text-teal"}`}>₹{p.price.toLocaleString()}</span>
-                      {p.mrp > 0 && <span className={`text-sm line-through ${p.featured ? "text-white/50" : "text-muted-foreground"}`}>₹{p.mrp.toLocaleString()}</span>}
+                      {p.mrp > 0 && <span className={`text-sm line-through ${p.featured ? "text-white/85" : "text-muted-foreground"}`}>₹{p.mrp.toLocaleString()}</span>}
                     </div>
                     {savings > 0 && (
                       <div className="mt-1 inline-block rounded-full bg-gold/15 px-2.5 py-0.5 text-xs font-bold text-gold">Save ₹{savings.toLocaleString()}</div>

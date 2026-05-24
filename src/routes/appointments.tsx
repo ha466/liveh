@@ -119,7 +119,7 @@ function Appointments() {
                 {lab.phones.map((p, i) => (
                   <a key={p} href={`tel:+91${p}`} className="flex items-center gap-2 hover:text-light-cyan">
                     <Phone className="h-4 w-4 text-gold" /> <span className="font-semibold">{p}</span>
-                    <span className="text-xs text-white/60">· {i === 0 ? "Primary" : i === 1 ? "Secondary" : "Tertiary"}</span>
+                    <span className="text-xs text-white/85">· {i === 0 ? "Primary" : i === 1 ? "Secondary" : "Tertiary"}</span>
                   </a>
                 ))}
                 <a href={lab.mapsUrl} target="_blank" rel="noreferrer" className="flex items-start gap-2 text-white/85 hover:text-light-cyan">

@@ -15,7 +15,7 @@ export function Footer() {
               <div className="tamil text-xs text-light-cyan">{lab.nameTa}</div>
             </div>
           </div>
-          <p className="mt-4 text-sm text-white/70">
+          <p className="mt-4 text-sm text-white/90">
             Quality diagnostic services with free home sample collection — open 24 hours, every day.
           </p>
           <div className="mt-4 inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1.5 text-xs">
@@ -66,7 +66,7 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-white/10">
-        <div className="mx-auto max-w-7xl px-6 py-5 text-center text-xs text-white/60 md:px-8">
+        <div className="mx-auto max-w-7xl px-6 py-5 text-center text-xs text-white/85 md:px-8">
           © {new Date().getFullYear()} {lab.name}. All rights reserved. · Operated by {lab.owner.name} ({lab.owner.qual})
         </div>
       </div>

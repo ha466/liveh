@@ -224,7 +224,7 @@ function HomePage() {
               <div className="mt-auto pt-6">
                 <div className="flex items-baseline gap-2">
                   <span className={`text-3xl font-bold ${p.featured ? "text-gold" : "text-teal"}`}>₹{p.price.toLocaleString()}</span>
-                  {p.mrp > 0 && <span className={`text-sm line-through ${p.featured ? "text-white/50" : "text-muted-foreground"}`}>₹{p.mrp.toLocaleString()}</span>}
+                  {p.mrp > 0 && <span className={`text-sm line-through ${p.featured ? "text-white/85" : "text-muted-foreground"}`}>₹{p.mrp.toLocaleString()}</span>}
                 </div>
                 <div className="mt-4 grid grid-cols-2 gap-2">
                   <Link
@@ -290,7 +290,7 @@ function HomePage() {
                 <p className="mt-1 text-sm text-light-cyan">{p.tests} tests included</p>
                 <div className="mt-4 flex items-baseline gap-2">
                   <span className="text-3xl font-bold text-gold">₹{p.price}</span>
-                  <span className="text-sm text-white/60 line-through">₹{p.mrp}</span>
+                  <span className="text-sm text-white/85 line-through">₹{p.mrp}</span>
                 </div>
                 <div className="mt-4 flex flex-wrap gap-2">
                   <Link to="/appointments" className="rounded-md bg-white px-4 py-2 text-sm font-semibold text-navy">
