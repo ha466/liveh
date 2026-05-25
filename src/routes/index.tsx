@@ -10,6 +10,7 @@ import heroBg from "@/assets/lab/background.png";
 import cbcImg from "@/assets/lab/cbc.webp";
 import biochemImg from "@/assets/lab/biochem.webp";
 import proteinImg from "@/assets/lab/protein.webp";
+import ecgMachine from "@/assets/ecg-machine.webp";
 import { waForPackage } from "@/lib/whatsapp";
 
 export const Route = createFileRoute("/")({
@@ -36,7 +37,7 @@ const services = [
   { icon: Microscope, name: "Health Packages", desc: "Mini to Premium — 61 to 96 tests in one visit." },
 ];
 
-const featured = packages.filter((p) => ["basic", "regular", "executive", "premium"].includes(p.slug));
+const featured = packages.filter((p) => ["basic", "regular", "medium", "executive"].includes(p.slug));
 
 function HomePage() {
   return (
