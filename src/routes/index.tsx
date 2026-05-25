@@ -11,6 +11,7 @@ import cbcImg from "@/assets/lab/cbc.webp";
 import biochemImg from "@/assets/lab/biochem.webp";
 import proteinImg from "@/assets/lab/protein.webp";
 import ecgMachine from "@/assets/ecg-machine.webp";
+import pftMachine from "@/assets/pft-machine.webp";
 import { waForPackage } from "@/lib/whatsapp";
 
 export const Route = createFileRoute("/")({
@@ -170,8 +171,21 @@ function HomePage() {
               </a>
             </div>
           </div>
-          <div className="relative">
+          <div className="relative grid gap-4">
             <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-teal/40 to-gold/30 blur-2xl" />
+            <div className="relative overflow-hidden rounded-3xl bg-white/5 p-4 ring-1 ring-white/20 backdrop-blur">
+              <img
+                src={pftMachine}
+                alt="Bionet SpiroCare Pulmonary Function Test (PFT) spirometer — the only PFT machine in Udumalaipettai"
+                width="900"
+                height="900"
+                className="h-auto w-full rounded-2xl bg-white object-contain"
+              />
+              <div className="mt-3 flex items-center justify-between rounded-xl bg-navy/60 px-4 py-3 text-xs">
+                <span className="font-semibold text-white">Bionet SpiroCare PFT</span>
+                <span className="text-gold">Only PFT in Udumalaipettai</span>
+              </div>
+            </div>
             <div className="relative overflow-hidden rounded-3xl bg-white/5 p-4 ring-1 ring-white/20 backdrop-blur">
               <img
                 src={ecgMachine}
