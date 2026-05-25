@@ -110,68 +110,63 @@ export type Pkg = {
   highlight?: string;
 };
 
+// Sorted low → high by offer price
 export const packages: Pkg[] = [
   {
-    slug: "mini",
-    name: "Mini Health Package",
-    tests: 61, mrp: 1200, price: 650,
-    includes: ["Complete Blood Count (24)", "Diabetic (Glucose Fasting)", "Kidney Function (7)", "Lipid Profile (9)", "Urine Complete (20)"],
+    slug: "general",
+    name: "General Package",
+    tests: 5, mrp: 480, price: 250,
+    includes: ["Haemoglobin", "Glucose FBS/PPBS", "Creatinine", "Bilirubin", "Calcium"],
+  },
+  {
+    slug: "anemia-mini",
+    name: "Anemia Mini Profile",
+    tests: 3, mrp: 800, price: 400,
+    includes: ["Haemoglobin", "Smear Study", "Total Iron Profile (Iron, UIBC, TIBC & Transferrin Saturation)"],
+  },
+  {
+    slug: "fever",
+    name: "Fever Profile",
+    tests: 4, mrp: 850, price: 500,
+    includes: ["CBC with ESR & Smear Study", "Urine Complete Examination", "Glucose RBS", "Widal Test"],
+  },
+  {
+    slug: "diabetes-max",
+    name: "Diabetic Maximum Package",
+    tests: 8, mrp: 1130, price: 700,
+    includes: ["Sugar FBS/PPBS", "HbA1c", "Urea + Creatinine", "Total Cholesterol", "Blood Urea Nitrogen", "EGFR", "Serum Albumin"],
+  },
+  {
+    slug: "mini-master",
+    name: "Mini Master Health Checkup",
+    tests: 7, mrp: 2650, price: 1400,
+    includes: ["CBC with ESR & Smear Study", "Glucose (FBS/PPBS, HbA1c, MBG)", "Kidney Function Test", "Liver Function Test", "Lipid Profile", "Urine Complete Examination", "Thyroid Function Test (T3, T4, TSH)"],
   },
   {
     slug: "basic",
     name: "Basic Health Package",
-    tests: 79, mrp: 3200, price: 1600,
-    includes: ["CBC (24)", "Diabetic (FBS + HbA1C)", "Lipid Profile", "Kidney Function", "Liver Function (12)", "Electrolytes", "Bone Health"],
+    tests: 10, mrp: 4000, price: 1800,
+    includes: ["CBC with ESR & Smear Study", "Glucose FBS + PPBS + HbA1c", "Microalbumin to Creatinine Ratio (MBG)", "Kidney Function Test", "Liver Function Test", "Lipid Profile", "Electrocardiogram (ECG)", "Urine Complete Examination"],
   },
   {
     slug: "regular",
     name: "Regular Health Package",
-    tests: 87, mrp: 4500, price: 2000,
-    includes: ["CBC (24)", "Diabetic + HbA1C", "Lipid + Kidney + Liver", "Iron Profile", "Thyroid (T3/T4/TSH)", "Tumor Marker", "Urine Complete"],
+    tests: 9, mrp: 4400, price: 2300,
+    includes: ["CBC with ESR & Smear Study", "Glucose (FBS/PPBS, HbA1c, MBG)", "Kidney Function Test", "Liver Function Test", "Lipid Profile", "Iron Profile", "Thyroid Function Test (T3, T4, TSH)", "Electrolytes", "ECG"],
     highlight: "Most Popular",
     featured: true,
   },
   {
+    slug: "medium",
+    name: "Medium Health Package",
+    tests: 9, mrp: 6900, price: 2700,
+    includes: ["CBC with ESR & Smear Study", "Glucose (FBS/PPBS, HbA1c, MBG)", "Kidney Function Test", "Liver Function Test", "Lipid Profile", "Vitamin Profile (25-OH Vitamin D3, B12)", "Electrolytes", "Thyroid Function Test (T3, T4, TSH)", "Urine Complete Examination"],
+  },
+  {
     slug: "executive",
     name: "Executive Health Package",
-    tests: 89, mrp: 5200, price: 2500,
-    includes: ["CBC + Diabetic + HbA1C", "Lipid + Kidney + Liver", "Thyroid Function", "Tumor Marker", "Vitamin D & B12", "Iron Profile"],
-  },
-  {
-    slug: "premium",
-    name: "Premium Health Package",
-    tests: 96, mrp: 7300, price: 3100,
-    includes: ["Everything in Executive", "Pancreas Profile", "Cardiac Panel (6)", "Vitamin D & B12", "Iron Profile", "Bone Health"],
-  },
-  {
-    slug: "fullbody",
-    name: "Full Body Health Checkup",
-    tests: 9, mrp: 3000, price: 1600,
-    includes: ["CBC", "ESR", "FBS + HbA1C", "Renal Function", "Liver Function", "Lipid Profile", "Thyroid Profile", "Urine Routine"],
-  },
-  {
-    slug: "master",
-    name: "Master Health Checkup",
-    tests: 90, mrp: 2500, price: 1600,
-    includes: ["FBS + PPBS", "CBC + ESR + Smear", "Thyroid Function", "Lipid + Liver + Renal", "HbA1C", "Urine Complete"],
-  },
-  {
-    slug: "diabetes-essential",
-    name: "Diabetes Essential Panel",
-    tests: 10, mrp: 1000, price: 550,
-    includes: ["FBS + PPBS", "HbA1C", "Blood Urea + Creatinine", "Triglycerides", "BUN + eGFR"],
-  },
-  {
-    slug: "diabetes-advanced",
-    name: "Diabetes Advanced Panel",
-    tests: 20, mrp: 1200, price: 899,
-    includes: ["FBS + PPBS", "HbA1C", "Lipid Profile", "eGFR + BUN", "Urea + Creatinine"],
-  },
-  {
-    slug: "preop",
-    name: "Pre-Operative Panel",
-    tests: 9, mrp: 0, price: 1600,
-    includes: ["CBC", "Blood Group + Rh", "BT/CT", "Sugar + Urea + Creatinine", "HIV + HBsAg + HCV"],
+    tests: 13, mrp: 8000, price: 4000,
+    includes: ["CBC with ESR & Smear Study", "Glucose (FBS/PPBS, HbA1c, MBG)", "Kidney Function Test", "Liver Function Test", "Lipid Profile", "Urine Complete", "Amylase + Lipase", "hs-CRP", "Iron Profile", "Vitamin Profile", "ECG", "Pulmonary Function Test (PFT)"],
   },
 ];
 
