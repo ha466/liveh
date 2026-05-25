@@ -10,6 +10,7 @@ import heroBg from "@/assets/lab/background.png";
 import cbcImg from "@/assets/lab/cbc.webp";
 import biochemImg from "@/assets/lab/biochem.webp";
 import proteinImg from "@/assets/lab/protein.webp";
+import ecgMachine from "@/assets/ecg-machine.webp";
 import { waForPackage } from "@/lib/whatsapp";
 
 export const Route = createFileRoute("/")({
@@ -36,7 +37,7 @@ const services = [
   { icon: Microscope, name: "Health Packages", desc: "Mini to Premium — 61 to 96 tests in one visit." },
 ];
 
-const featured = packages.filter((p) => ["basic", "regular", "executive", "premium"].includes(p.slug));
+const featured = packages.filter((p) => ["basic", "regular", "medium", "executive"].includes(p.slug));
 
 function HomePage() {
   return (
@@ -131,6 +132,60 @@ function HomePage() {
               <div className="mt-1 text-xs uppercase tracking-wider text-light-cyan">{s.l}</div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* ECG + PFT BANNER — only PFT machine in Udumalaipettai */}
+      <section className="relative overflow-hidden bg-navy text-white">
+        <div className="absolute inset-0 opacity-20" style={{ backgroundImage: `radial-gradient(circle at 20% 30%, var(--teal) 0%, transparent 50%), radial-gradient(circle at 80% 70%, var(--gold) 0%, transparent 50%)` }} />
+        <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-6 py-16 md:grid-cols-2 md:px-8 md:py-20">
+          <div>
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-gold/20 px-3 py-1 text-xs font-semibold text-gold ring-1 ring-gold/40">
+              <HeartPulse className="h-3.5 w-3.5" /> Advanced Cardiac & Pulmonary Diagnostics
+            </span>
+            <h2 className="mt-5 text-3xl font-bold leading-tight md:text-4xl">
+              The <span className="text-gold">only PFT machine</span> in Udumalaipettai —<br className="hidden md:inline" /> and the most advanced ECG & auto biochemistry analyser in the region.
+            </h2>
+            <p className="mt-5 text-white/85 md:text-lg">
+              We are the only diagnostic centre in Udumalaipettai equipped with a full Pulmonary Function Test (PFT) machine.
+              Paired with a 12-lead colour-display ECG and a fully automated advanced biochemistry analyser,
+              you get hospital-grade cardiac, lung and metabolic screening — right here, locally.
+            </p>
+            <ul className="mt-6 grid gap-2 text-sm text-light-cyan sm:grid-cols-2">
+              {[
+                "12-Lead Colour ECG with auto-interpretation",
+                "Pulmonary Function Test (Spirometry)",
+                "Fully Auto Biochemistry Analyser",
+                "Same-day cardiac & lung reports",
+              ].map((f) => (
+                <li key={f} className="inline-flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 shrink-0 text-gold" /> {f}</li>
+              ))}
+            </ul>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link to="/appointments" className="rounded-md bg-gold px-6 py-3 text-sm font-semibold text-navy shadow-button transition hover:scale-[1.02]">
+                Book ECG / PFT
+              </Link>
+              <a href={`tel:+91${lab.phones[0]}`} className="inline-flex items-center gap-2 rounded-md border border-white/40 bg-white/5 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10">
+                <Phone className="h-4 w-4" /> {lab.phones[0]}
+              </a>
+            </div>
+          </div>
+          <div className="relative">
+            <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-teal/40 to-gold/30 blur-2xl" />
+            <div className="relative overflow-hidden rounded-3xl bg-white/5 p-4 ring-1 ring-white/20 backdrop-blur">
+              <img
+                src={ecgMachine}
+                alt="12-lead colour ECG machine used at Live Life Healthcare Lab, Udumalaipettai"
+                width="900"
+                height="780"
+                className="h-auto w-full rounded-2xl object-contain"
+              />
+              <div className="mt-3 flex items-center justify-between rounded-xl bg-navy/60 px-4 py-3 text-xs">
+                <span className="font-semibold text-white">12-Lead Colour ECG</span>
+                <span className="text-gold">Auto-interpretation · Instant print</span>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
