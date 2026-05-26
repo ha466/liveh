@@ -12,6 +12,7 @@ import biochemImg from "@/assets/lab/biochem.webp";
 import proteinImg from "@/assets/lab/protein.webp";
 import ecgMachine from "@/assets/ecg-machine.webp";
 import pftMachine from "@/assets/pft-machine.webp";
+import microscopeImg from "@/assets/microscope.webp";
 import { waForPackage } from "@/lib/whatsapp";
 
 export const Route = createFileRoute("/")({
