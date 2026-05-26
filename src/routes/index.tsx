@@ -92,9 +92,7 @@ function HomePage() {
 
           {/* Right stat card */}
           <div className="relative hidden md:block">
-            <div className="absolute -top-8 -left-8 h-32 w-32 rounded-full bg-teal/40 blur-3xl" />
-            <div className="absolute -bottom-8 -right-4 h-40 w-40 rounded-full bg-gold/20 blur-3xl" />
-            <div className="relative rounded-2xl bg-white/10 backdrop-blur p-8 ring-1 ring-white/20 shadow-card-hover">
+            <div className="relative rounded-2xl bg-white/10 p-8 ring-1 ring-white/20 shadow-card-hover">
               <div className="grid grid-cols-2 gap-4">
                 {[
                   { v: "24", l: "Hours Open" },
