@@ -38,7 +38,7 @@ function Appointments() {
           <span className="text-xs font-semibold uppercase tracking-widest text-light-cyan">Book Now</span>
           <h1 className="mt-2 text-4xl font-bold text-white md:text-5xl">Book an Appointment</h1>
           <p className="tamil mt-2 text-light-cyan text-lg">சந்திப்பு முன்பதிவு</p>
-          <p className="mt-4 max-w-xl text-white/85">
+          <p className="mt-4 max-w-xl text-white/95">
             Walk-in any hour, or request a free home collection — we'll confirm by phone shortly.
           </p>
         </div>
@@ -119,14 +119,14 @@ function Appointments() {
                 {lab.phones.map((p, i) => (
                   <a key={p} href={`tel:+91${p}`} className="flex items-center gap-2 hover:text-light-cyan">
                     <Phone className="h-4 w-4 text-gold" /> <span className="font-semibold">{p}</span>
-                    <span className="text-xs text-white/85">· {i === 0 ? "Primary" : i === 1 ? "Secondary" : "Tertiary"}</span>
+                    <span className="text-xs text-white/95">· {i === 0 ? "Primary" : i === 1 ? "Secondary" : "Tertiary"}</span>
                   </a>
                 ))}
-                <a href={lab.mapsUrl} target="_blank" rel="noreferrer" className="flex items-start gap-2 text-white/85 hover:text-light-cyan">
+                <a href={lab.mapsUrl} target="_blank" rel="noreferrer" className="flex items-start gap-2 text-white/95 hover:text-light-cyan">
                   <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
                   <span>{lab.address.line1}, {lab.address.line2}, {lab.address.line3}, {lab.address.city} — {lab.address.pin}</span>
                 </a>
-                <div className="flex items-center gap-2 text-white/85">
+                <div className="flex items-center gap-2 text-white/95">
                   <Clock className="h-4 w-4 text-gold" /> Open 24 hours · 7 days
                 </div>
               </div>

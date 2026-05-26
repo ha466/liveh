@@ -39,7 +39,7 @@ export function Greeting() {
         </div>
         <h1 className="text-white text-4xl md:text-6xl font-bold">{greet.en}</h1>
         <p className="tamil mt-2 text-light-cyan text-2xl md:text-3xl">{greet.ta}</p>
-        <p className="mt-6 max-w-xl text-white/85">
+        <p className="mt-6 max-w-xl text-white/95">
           Welcome to Live Life Healthcare Lab — Quality Diagnostics, Trusted Results.
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
@@ -50,7 +50,7 @@ export function Greeting() {
       </div>
       <button
         onClick={() => { setLeaving(true); setTimeout(() => setVisible(false), 400); sessionStorage.setItem("llh_greeted","1"); }}
-        className="absolute bottom-6 right-6 text-white/80 text-sm hover:text-white"
+        className="absolute bottom-6 right-6 text-white/90 text-sm hover:text-white"
       >
         Skip →
       </button>
