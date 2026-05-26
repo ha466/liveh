@@ -37,7 +37,7 @@ function TestsPage() {
           <span className="text-xs font-semibold uppercase tracking-widest text-light-cyan">Pricing</span>
           <h1 className="mt-2 text-4xl font-bold text-white md:text-5xl">Tests & Health Packages</h1>
           <p className="tamil mt-2 text-light-cyan text-lg">பரிசோதனைகள் & தொகுப்புகள்</p>
-          <p className="mt-4 max-w-2xl text-white/80">
+          <p className="mt-4 max-w-2xl text-white/90">
             Transparent pricing for 2026–2027. All packages include a 12-hour fasting requirement for accurate results.
           </p>
 
@@ -47,7 +47,7 @@ function TestsPage() {
                 key={t}
                 onClick={() => setTab(t)}
                 className={`rounded-full px-5 py-2 text-sm font-semibold capitalize transition ${
-                  tab === t ? "bg-white text-navy" : "text-white/80 hover:text-white"
+                  tab === t ? "bg-white text-navy" : "text-white/90 hover:text-white"
                 }`}
               >
                 {t}
@@ -74,7 +74,7 @@ function TestsPage() {
                       {p.tests} TESTS
                     </span>
                   </div>
-                  <ul className={`mt-4 space-y-1.5 text-sm ${p.featured ? "text-white/80" : "text-muted-foreground"}`}>
+                  <ul className={`mt-4 space-y-1.5 text-sm ${p.featured ? "text-white/90" : "text-muted-foreground"}`}>
                     {p.includes.map((i) => (
                       <li key={i} className="flex gap-2"><Check className={`mt-0.5 h-4 w-4 shrink-0 ${p.featured ? "text-gold" : "text-teal"}`} /> {i}</li>
                     ))}
@@ -82,7 +82,7 @@ function TestsPage() {
                   <div className="mt-auto pt-6">
                     <div className="flex items-baseline gap-2">
                       <span className={`text-3xl font-bold ${p.featured ? "text-gold" : "text-teal"}`}>₹{p.price.toLocaleString()}</span>
-                      {p.mrp > 0 && <span className={`text-sm line-through ${p.featured ? "text-white/85" : "text-muted-foreground"}`}>₹{p.mrp.toLocaleString()}</span>}
+                      {p.mrp > 0 && <span className={`text-sm line-through ${p.featured ? "text-white/95" : "text-muted-foreground"}`}>₹{p.mrp.toLocaleString()}</span>}
                     </div>
                     {savings > 0 && (
                       <div className="mt-1 inline-block rounded-full bg-gold/15 px-2.5 py-0.5 text-xs font-bold text-gold">Save ₹{savings.toLocaleString()}</div>

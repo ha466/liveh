@@ -125,7 +125,7 @@ function About() {
           <div className="rounded-2xl bg-navy p-8 text-white shadow-card-hover">
             <Target className="h-8 w-8 text-gold" />
             <h3 className="mt-4 text-2xl font-bold text-white">Our Mission</h3>
-            <p className="mt-3 text-white/80">
+            <p className="mt-3 text-white/90">
               To provide affordable, accurate, and accessible diagnostic laboratory services to every individual
               in Udumalaipettai and surrounding areas — using advanced technology and compassionate care.
             </p>
@@ -133,7 +133,7 @@ function About() {
           <div className="rounded-2xl bg-teal p-8 text-white shadow-card-hover">
             <Eye className="h-8 w-8 text-gold" />
             <h3 className="mt-4 text-2xl font-bold text-white">Our Vision</h3>
-            <p className="mt-3 text-white/85">
+            <p className="mt-3 text-white/95">
               To be the most trusted quality diagnostic centre in the region — delivering fast, reliable results
               that help doctors and patients make informed health decisions.
             </p>

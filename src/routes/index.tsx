@@ -65,7 +65,7 @@ function HomePage() {
             <p className="tamil mt-3 text-xl text-light-cyan md:text-2xl">
               நம்பகமான நோயறிதல் ஆய்வக சேவைகள்
             </p>
-            <p className="mt-6 max-w-lg text-base text-white/85 md:text-lg">
+            <p className="mt-6 max-w-lg text-base text-white/95 md:text-lg">
               Accurate, affordable, and accessible. Fully automated testing, 24-hour service,
               and free home sample collection across Udumalaipettai.
             </p>
@@ -106,7 +106,7 @@ function HomePage() {
                   </div>
                 ))}
               </div>
-              <div className="mt-5 rounded-xl bg-navy/40 p-4 text-sm text-white/80">
+              <div className="mt-5 rounded-xl bg-navy/40 p-4 text-sm text-white/90">
                 <div className="font-semibold text-white">Need urgent testing?</div>
                 <div className="mt-1">Call our 24-hour line — sample collected in minutes.</div>
                 <a href={`tel:+91${lab.phones[0]}`} className="mt-2 inline-flex items-center gap-1.5 font-semibold text-gold">
@@ -146,7 +146,7 @@ function HomePage() {
             <h2 className="mt-5 text-3xl font-bold leading-tight md:text-4xl">
               The <span className="text-gold">only PFT machine</span> in Udumalaipettai — plus the region's most advanced ECG, biochemistry analyser and digital microscope.
             </h2>
-            <p className="mt-5 text-white/85 md:text-lg">
+            <p className="mt-5 text-white/95 md:text-lg">
               No other diagnostic centre in Udumalaipettai offers this combination: a full Pulmonary Function Test (PFT) machine, a 12-lead colour ECG, a fully automated advanced biochemistry analyser,
               and a high-definition trinocular digital microscope for precision microbiology and smear studies.
             </p>
@@ -301,7 +301,7 @@ function HomePage() {
                   {p.tests} TESTS
                 </span>
               </div>
-              <ul className={`mt-4 space-y-1.5 text-sm ${p.featured ? "text-white/80" : "text-muted-foreground"}`}>
+              <ul className={`mt-4 space-y-1.5 text-sm ${p.featured ? "text-white/90" : "text-muted-foreground"}`}>
                 {p.includes.slice(0, 5).map((i) => (
                   <li key={i} className="flex gap-2"><Check className={`mt-0.5 h-4 w-4 shrink-0 ${p.featured ? "text-gold" : "text-teal"}`} /> {i}</li>
                 ))}
@@ -309,7 +309,7 @@ function HomePage() {
               <div className="mt-auto pt-6">
                 <div className="flex items-baseline gap-2">
                   <span className={`text-3xl font-bold ${p.featured ? "text-gold" : "text-teal"}`}>₹{p.price.toLocaleString()}</span>
-                  {p.mrp > 0 && <span className={`text-sm line-through ${p.featured ? "text-white/85" : "text-muted-foreground"}`}>₹{p.mrp.toLocaleString()}</span>}
+                  {p.mrp > 0 && <span className={`text-sm line-through ${p.featured ? "text-white/95" : "text-muted-foreground"}`}>₹{p.mrp.toLocaleString()}</span>}
                 </div>
                 <div className="mt-4 grid grid-cols-2 gap-2">
                   <Link
@@ -367,7 +367,7 @@ function HomePage() {
             <div className="text-xs font-semibold uppercase tracking-widest text-light-cyan">Free Service</div>
             <h2 className="mt-2 text-3xl font-bold text-white md:text-4xl">Free home blood sample collection</h2>
             <p className="tamil mt-2 text-light-cyan">வீட்டிற்கு வந்து இலவசமாக இரத்த மாதிரி எடுக்கப்படும்</p>
-            <p className="mt-4 max-w-2xl text-white/85">
+            <p className="mt-4 max-w-2xl text-white/95">
               A trained phlebotomist arrives at your door, collects the sample with sterile single-use equipment,
               and your report reaches you digitally — usually the same day. Available 24/7 across Udumalaipettai.
             </p>

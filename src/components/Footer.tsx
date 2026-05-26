@@ -5,7 +5,7 @@ import logo from "@/assets/lab/logo.png";
 
 export function Footer() {
   return (
-    <footer className="bg-navy text-white/85">
+    <footer className="bg-navy text-white/95">
       <div className="mx-auto grid max-w-7xl gap-10 px-6 py-14 md:grid-cols-4 md:px-8">
         <div className="md:col-span-1">
           <div className="flex items-center gap-2.5">
@@ -66,7 +66,7 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-white/10">
-        <div className="mx-auto max-w-7xl px-6 py-5 text-center text-xs text-white/85 md:px-8">
+        <div className="mx-auto max-w-7xl px-6 py-5 text-center text-xs text-white/95 md:px-8">
           © {new Date().getFullYear()} {lab.name}. All rights reserved. · Operated by {lab.owner.name} ({lab.owner.qual})
         </div>
       </div>

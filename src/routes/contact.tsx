@@ -72,12 +72,12 @@ function Contact() {
             <div className="rounded-2xl bg-navy p-6 text-white shadow-card">
               <h3 className="text-lg font-bold text-white">Visit the lab</h3>
               <div className="mt-4 space-y-3 text-sm">
-                <div className="flex items-start gap-2 text-white/85">
+                <div className="flex items-start gap-2 text-white/95">
                   <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
                   <span>{lab.address.line1}, {lab.address.line2}, {lab.address.line3}, {lab.address.city} — {lab.address.pin}, {lab.address.state}</span>
                 </div>
-                <div className="flex items-center gap-2 text-white/85"><Clock className="h-4 w-4 text-gold" /> Open 24 hours · 7 days a week</div>
-                <div className="flex items-center gap-2 text-white/85"><Mail className="h-4 w-4 text-gold" /> Email coming soon</div>
+                <div className="flex items-center gap-2 text-white/95"><Clock className="h-4 w-4 text-gold" /> Open 24 hours · 7 days a week</div>
+                <div className="flex items-center gap-2 text-white/95"><Mail className="h-4 w-4 text-gold" /> Email coming soon</div>
               </div>
               <a
                 href={lab.mapsUrl}
