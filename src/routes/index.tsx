@@ -362,38 +362,39 @@ function HomePage() {
         </div>
       </section>
 
-      {/* DIABETES */}
+      {/* FREE HOME COLLECTION CTA */}
       <section className="bg-gradient-hero text-white">
-        <div className="mx-auto max-w-7xl px-6 py-20 md:px-8">
-          <div className="text-center">
-            <div className="text-xs font-semibold uppercase tracking-widest text-light-cyan">Special Panels</div>
-            <h2 className="mt-2 text-3xl font-bold text-white md:text-4xl">Diabetes Monitoring Made Simple</h2>
-            <p className="mt-3 text-white/80">Advised every 3 months for diabetes patients.</p>
+        <div className="mx-auto grid max-w-7xl items-center gap-8 px-6 py-16 md:grid-cols-[1.4fr_1fr] md:px-8 md:py-20">
+          <div>
+            <div className="text-xs font-semibold uppercase tracking-widest text-light-cyan">Free Service</div>
+            <h2 className="mt-2 text-3xl font-bold text-white md:text-4xl">Free home blood sample collection</h2>
+            <p className="tamil mt-2 text-light-cyan">வீட்டிற்கு வந்து இலவசமாக இரத்த மாதிரி எடுக்கப்படும்</p>
+            <p className="mt-4 max-w-2xl text-white/85">
+              A trained phlebotomist arrives at your door, collects the sample with sterile single-use equipment,
+              and your report reaches you digitally — usually the same day. Available 24/7 across Udumalaipettai.
+            </p>
+            <ul className="mt-5 grid gap-2 text-sm text-light-cyan sm:grid-cols-2">
+              {[
+                "No collection charges",
+                "Sterile single-use kits",
+                "24/7 booking on phone & WhatsApp",
+                "Digital reports — same day for routine tests",
+              ].map((f) => (
+                <li key={f} className="inline-flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 shrink-0 text-gold" /> {f}</li>
+              ))}
+            </ul>
           </div>
-          <div className="mx-auto mt-10 grid max-w-3xl gap-5 md:grid-cols-2">
-            {packages.filter((p) => p.slug.startsWith("diabetes")).map((p) => (
-              <div key={p.slug} className="rounded-2xl bg-white/10 p-6 ring-1 ring-white/20 backdrop-blur">
-                <h3 className="text-xl font-bold text-white">{p.name}</h3>
-                <p className="mt-1 text-sm text-light-cyan">{p.tests} tests included</p>
-                <div className="mt-4 flex items-baseline gap-2">
-                  <span className="text-3xl font-bold text-gold">₹{p.price}</span>
-                  <span className="text-sm text-white/85 line-through">₹{p.mrp}</span>
-                </div>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  <Link to="/appointments" className="rounded-md bg-white px-4 py-2 text-sm font-semibold text-navy">
-                    Book Now
-                  </Link>
-                  <a
-                    href={waForPackage(p.name, p.price)}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-1.5 rounded-md bg-[#25D366] px-4 py-2 text-sm font-semibold text-white"
-                  >
-                    <MessageCircle className="h-4 w-4" /> WhatsApp
-                  </a>
-                </div>
-              </div>
+          <div className="flex flex-col gap-3 rounded-2xl bg-white/10 p-6 ring-1 ring-white/20">
+            <div className="text-sm text-light-cyan">Call to book home collection</div>
+            {lab.phones.map((p) => (
+              <a key={p} href={`tel:+91${p}`} className="inline-flex items-center justify-between rounded-md bg-white/10 px-4 py-3 text-base font-semibold text-white hover:bg-white/15">
+                <span className="inline-flex items-center gap-2"><Phone className="h-4 w-4 text-gold" /> {p}</span>
+                <ArrowRight className="h-4 w-4 text-gold" />
+              </a>
             ))}
+            <Link to="/appointments" className="mt-2 rounded-md bg-gold px-4 py-3 text-center text-sm font-semibold text-navy shadow-button hover:scale-[1.01]">
+              Book Online
+            </Link>
           </div>
         </div>
       </section>
