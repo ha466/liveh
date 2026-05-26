@@ -90,6 +90,7 @@ export const tests: Test[] = [
   // Cardiology & Pulmonology
   { name: "ECG (Electrocardiogram)", price: 200, category: "Cardiology & Pulmonology" },
   { name: "PFT (Pulmonary Function Test)", price: 500, category: "Cardiology & Pulmonology" },
+  { name: "Advanced Digital Microscopy (HD Trinocular)", price: 300, category: "Microbiology" },
 ];
 
 export const categories = [
