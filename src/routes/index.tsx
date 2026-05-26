@@ -12,6 +12,7 @@ import biochemImg from "@/assets/lab/biochem.webp";
 import proteinImg from "@/assets/lab/protein.webp";
 import ecgMachine from "@/assets/ecg-machine.webp";
 import pftMachine from "@/assets/pft-machine.webp";
+import microscopeImg from "@/assets/microscope.webp";
 import { waForPackage } from "@/lib/whatsapp";
 
 export const Route = createFileRoute("/")({
@@ -38,7 +39,7 @@ const services = [
   { icon: Microscope, name: "Health Packages", desc: "Mini to Premium — 61 to 96 tests in one visit." },
 ];
 
-const featured = packages.filter((p) => ["basic", "regular", "medium", "executive"].includes(p.slug));
+const featured = packages.filter((p) => ["mini-master", "basic", "regular", "exclusive"].includes(p.slug));
 
 function HomePage() {
   return (
@@ -91,9 +92,7 @@ function HomePage() {
 
           {/* Right stat card */}
           <div className="relative hidden md:block">
-            <div className="absolute -top-8 -left-8 h-32 w-32 rounded-full bg-teal/40 blur-3xl" />
-            <div className="absolute -bottom-8 -right-4 h-40 w-40 rounded-full bg-gold/20 blur-3xl" />
-            <div className="relative rounded-2xl bg-white/10 backdrop-blur p-8 ring-1 ring-white/20 shadow-card-hover">
+            <div className="relative rounded-2xl bg-white/10 p-8 ring-1 ring-white/20 shadow-card-hover">
               <div className="grid grid-cols-2 gap-4">
                 {[
                   { v: "24", l: "Hours Open" },
@@ -136,28 +135,27 @@ function HomePage() {
         </div>
       </section>
 
-      {/* ECG + PFT BANNER — only PFT machine in Udumalaipettai */}
+      {/* EQUIPMENT BANNER — PFT, ECG & Advanced Microscope */}
       <section className="relative overflow-hidden bg-navy text-white">
-        <div className="absolute inset-0 opacity-20" style={{ backgroundImage: `radial-gradient(circle at 20% 30%, var(--teal) 0%, transparent 50%), radial-gradient(circle at 80% 70%, var(--gold) 0%, transparent 50%)` }} />
+        <div className="absolute inset-0 opacity-15 pointer-events-none" style={{ backgroundImage: `linear-gradient(135deg, var(--teal) 0%, transparent 60%), linear-gradient(315deg, var(--gold) 0%, transparent 60%)` }} />
         <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-6 py-16 md:grid-cols-2 md:px-8 md:py-20">
           <div>
             <span className="inline-flex items-center gap-1.5 rounded-full bg-gold/20 px-3 py-1 text-xs font-semibold text-gold ring-1 ring-gold/40">
-              <HeartPulse className="h-3.5 w-3.5" /> Advanced Cardiac & Pulmonary Diagnostics
+              <HeartPulse className="h-3.5 w-3.5" /> Hospital-Grade Equipment
             </span>
             <h2 className="mt-5 text-3xl font-bold leading-tight md:text-4xl">
-              The <span className="text-gold">only PFT machine</span> in Udumalaipettai —<br className="hidden md:inline" /> and the most advanced ECG & auto biochemistry analyser in the region.
+              The <span className="text-gold">only PFT machine</span> in Udumalaipettai — plus the region's most advanced ECG, biochemistry analyser and digital microscope.
             </h2>
             <p className="mt-5 text-white/85 md:text-lg">
-              We are the only diagnostic centre in Udumalaipettai equipped with a full Pulmonary Function Test (PFT) machine.
-              Paired with a 12-lead colour-display ECG and a fully automated advanced biochemistry analyser,
-              you get hospital-grade cardiac, lung and metabolic screening — right here, locally.
+              No other diagnostic centre in Udumalaipettai offers this combination: a full Pulmonary Function Test (PFT) machine, a 12-lead colour ECG, a fully automated advanced biochemistry analyser,
+              and a high-definition trinocular digital microscope for precision microbiology and smear studies.
             </p>
             <ul className="mt-6 grid gap-2 text-sm text-light-cyan sm:grid-cols-2">
               {[
                 "12-Lead Colour ECG with auto-interpretation",
                 "Pulmonary Function Test (Spirometry)",
                 "Fully Auto Biochemistry Analyser",
-                "Same-day cardiac & lung reports",
+                "HD Digital Trinocular Microscope",
               ].map((f) => (
                 <li key={f} className="inline-flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 shrink-0 text-gold" /> {f}</li>
               ))}
@@ -171,14 +169,15 @@ function HomePage() {
               </a>
             </div>
           </div>
-          <div className="relative grid gap-4">
-            <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-teal/40 to-gold/30 blur-2xl" />
-            <div className="relative overflow-hidden rounded-3xl bg-white/5 p-4 ring-1 ring-white/20 backdrop-blur">
+          <div className="relative grid gap-4 sm:grid-cols-2">
+            <div className="relative overflow-hidden rounded-3xl bg-white/5 p-3 ring-1 ring-white/20 sm:col-span-2">
               <img
                 src={pftMachine}
                 alt="Bionet SpiroCare Pulmonary Function Test (PFT) spirometer — the only PFT machine in Udumalaipettai"
                 width="900"
                 height="900"
+                loading="lazy"
+                decoding="async"
                 className="h-auto w-full rounded-2xl bg-white object-contain"
               />
               <div className="mt-3 flex items-center justify-between rounded-xl bg-navy/60 px-4 py-3 text-xs">
@@ -186,17 +185,34 @@ function HomePage() {
                 <span className="text-gold">Only PFT in Udumalaipettai</span>
               </div>
             </div>
-            <div className="relative overflow-hidden rounded-3xl bg-white/5 p-4 ring-1 ring-white/20 backdrop-blur">
+            <div className="relative overflow-hidden rounded-3xl bg-white/5 p-3 ring-1 ring-white/20">
               <img
                 src={ecgMachine}
                 alt="12-lead colour ECG machine used at Live Life Healthcare Lab, Udumalaipettai"
                 width="900"
                 height="780"
-                className="h-auto w-full rounded-2xl object-contain"
+                loading="lazy"
+                decoding="async"
+                className="h-40 w-full rounded-2xl object-contain"
               />
-              <div className="mt-3 flex items-center justify-between rounded-xl bg-navy/60 px-4 py-3 text-xs">
-                <span className="font-semibold text-white">12-Lead Colour ECG</span>
-                <span className="text-gold">Auto-interpretation · Instant print</span>
+              <div className="mt-3 rounded-xl bg-navy/60 px-3 py-2 text-[11px]">
+                <div className="font-semibold text-white">12-Lead Colour ECG</div>
+                <div className="text-gold">Auto-interpretation</div>
+              </div>
+            </div>
+            <div className="relative overflow-hidden rounded-3xl bg-white/5 p-3 ring-1 ring-white/20">
+              <img
+                src={microscopeImg}
+                alt="HD Digital Trinocular Microscope — the most advanced microscope in Udumalaipettai"
+                width="855"
+                height="855"
+                loading="lazy"
+                decoding="async"
+                className="h-40 w-full rounded-2xl bg-white object-contain"
+              />
+              <div className="mt-3 rounded-xl bg-navy/60 px-3 py-2 text-[11px]">
+                <div className="font-semibold text-white">HD Digital Microscope</div>
+                <div className="text-gold">Most advanced in Udumalai</div>
               </div>
             </div>
           </div>
@@ -344,38 +360,39 @@ function HomePage() {
         </div>
       </section>
 
-      {/* DIABETES */}
+      {/* FREE HOME COLLECTION CTA */}
       <section className="bg-gradient-hero text-white">
-        <div className="mx-auto max-w-7xl px-6 py-20 md:px-8">
-          <div className="text-center">
-            <div className="text-xs font-semibold uppercase tracking-widest text-light-cyan">Special Panels</div>
-            <h2 className="mt-2 text-3xl font-bold text-white md:text-4xl">Diabetes Monitoring Made Simple</h2>
-            <p className="mt-3 text-white/80">Advised every 3 months for diabetes patients.</p>
+        <div className="mx-auto grid max-w-7xl items-center gap-8 px-6 py-16 md:grid-cols-[1.4fr_1fr] md:px-8 md:py-20">
+          <div>
+            <div className="text-xs font-semibold uppercase tracking-widest text-light-cyan">Free Service</div>
+            <h2 className="mt-2 text-3xl font-bold text-white md:text-4xl">Free home blood sample collection</h2>
+            <p className="tamil mt-2 text-light-cyan">வீட்டிற்கு வந்து இலவசமாக இரத்த மாதிரி எடுக்கப்படும்</p>
+            <p className="mt-4 max-w-2xl text-white/85">
+              A trained phlebotomist arrives at your door, collects the sample with sterile single-use equipment,
+              and your report reaches you digitally — usually the same day. Available 24/7 across Udumalaipettai.
+            </p>
+            <ul className="mt-5 grid gap-2 text-sm text-light-cyan sm:grid-cols-2">
+              {[
+                "No collection charges",
+                "Sterile single-use kits",
+                "24/7 booking on phone & WhatsApp",
+                "Digital reports — same day for routine tests",
+              ].map((f) => (
+                <li key={f} className="inline-flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 shrink-0 text-gold" /> {f}</li>
+              ))}
+            </ul>
           </div>
-          <div className="mx-auto mt-10 grid max-w-3xl gap-5 md:grid-cols-2">
-            {packages.filter((p) => p.slug.startsWith("diabetes")).map((p) => (
-              <div key={p.slug} className="rounded-2xl bg-white/10 p-6 ring-1 ring-white/20 backdrop-blur">
-                <h3 className="text-xl font-bold text-white">{p.name}</h3>
-                <p className="mt-1 text-sm text-light-cyan">{p.tests} tests included</p>
-                <div className="mt-4 flex items-baseline gap-2">
-                  <span className="text-3xl font-bold text-gold">₹{p.price}</span>
-                  <span className="text-sm text-white/85 line-through">₹{p.mrp}</span>
-                </div>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  <Link to="/appointments" className="rounded-md bg-white px-4 py-2 text-sm font-semibold text-navy">
-                    Book Now
-                  </Link>
-                  <a
-                    href={waForPackage(p.name, p.price)}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-1.5 rounded-md bg-[#25D366] px-4 py-2 text-sm font-semibold text-white"
-                  >
-                    <MessageCircle className="h-4 w-4" /> WhatsApp
-                  </a>
-                </div>
-              </div>
+          <div className="flex flex-col gap-3 rounded-2xl bg-white/10 p-6 ring-1 ring-white/20">
+            <div className="text-sm text-light-cyan">Call to book home collection</div>
+            {lab.phones.map((p) => (
+              <a key={p} href={`tel:+91${p}`} className="inline-flex items-center justify-between rounded-md bg-white/10 px-4 py-3 text-base font-semibold text-white hover:bg-white/15">
+                <span className="inline-flex items-center gap-2"><Phone className="h-4 w-4 text-gold" /> {p}</span>
+                <ArrowRight className="h-4 w-4 text-gold" />
+              </a>
             ))}
+            <Link to="/appointments" className="mt-2 rounded-md bg-gold px-4 py-3 text-center text-sm font-semibold text-navy shadow-button hover:scale-[1.01]">
+              Book Online
+            </Link>
           </div>
         </div>
       </section>
