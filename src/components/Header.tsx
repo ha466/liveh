@@ -78,7 +78,7 @@ export function Header() {
       </div>
 
       {open && (
-        <div className="fixed inset-0 z-50 bg-navy/95 backdrop-blur lg:hidden">
+        <div className="fixed inset-0 z-50 overflow-y-auto bg-navy lg:hidden">
           <div className="flex items-center justify-between px-5 py-4">
             <div className="text-white font-bold">{lab.name}</div>
             <button aria-label="Close menu" onClick={() => setOpen(false)} className="text-white p-2">
