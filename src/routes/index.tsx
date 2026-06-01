@@ -13,6 +13,7 @@ import proteinImg from "@/assets/lab/protein.webp";
 import ecgMachine from "@/assets/ecg-machine.webp";
 import pftMachine from "@/assets/pft-machine.webp";
 import microscopeImg from "@/assets/microscope.webp";
+import ambulanceAsset from "@/assets/ambulance.jpg.asset.json";
 import { waForPackage } from "@/lib/whatsapp";
 
 export const Route = createFileRoute("/")({
@@ -214,6 +215,51 @@ function HomePage() {
                 <div className="font-semibold text-white">HD Digital Microscope</div>
                 <div className="text-gold">Most advanced in Udumalai</div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* AMBULANCE BANNER */}
+      <section
+        className="relative overflow-hidden text-white"
+        style={{
+          backgroundImage: `linear-gradient(110deg, rgba(13,27,62,0.92) 0%, rgba(13,27,62,0.55) 55%, rgba(13,27,62,0.15) 100%), url(${ambulanceAsset.url})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center right",
+          backgroundColor: "var(--navy)",
+        }}
+      >
+        <div className="mx-auto max-w-7xl px-6 py-20 md:px-8 md:py-24">
+          <div className="max-w-2xl">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/30 px-3 py-1 text-xs font-semibold text-white ring-1 ring-primary/50">
+              <HeartPulse className="h-3.5 w-3.5" /> 24 Hour Service
+            </span>
+            <h2 className="mt-5 text-3xl font-bold leading-tight md:text-5xl">
+              MK Best Ambulance <span className="text-gold">Udumalpet</span>
+            </h2>
+            <p className="mt-3 text-lg text-white/95 md:text-xl">
+              24 Hours Advanced Life Support Mobile ICU — O2, Ventilator, A/C First Aid & VIP Freezer Box.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <a
+                href="tel:+919443472989"
+                className="inline-flex items-center gap-2 rounded-md bg-gold px-6 py-3 text-sm font-semibold text-navy shadow-button transition hover:scale-[1.02]"
+              >
+                <Phone className="h-4 w-4" /> 94434 72989
+              </a>
+              <a
+                href="tel:+919150113000"
+                className="inline-flex items-center gap-2 rounded-md bg-white px-6 py-3 text-sm font-semibold text-navy shadow-button transition hover:scale-[1.02]"
+              >
+                <Phone className="h-4 w-4" /> 91501 13000
+              </a>
+              <Link
+                to="/ambulance"
+                className="inline-flex items-center gap-2 rounded-md border border-white/40 bg-white/10 px-6 py-3 text-sm font-semibold text-white hover:bg-white/20"
+              >
+                Learn More <ArrowRight className="h-4 w-4" />
+              </Link>
             </div>
           </div>
         </div>
