@@ -6,7 +6,7 @@ import {
   Droplet, FlaskConical, Activity, HeartPulse, Microscope, Beaker, Check,
   MessageCircle,
 } from "lucide-react";
-import heroBg from "@/assets/lab/background.png";
+import heroBg from "@/assets/lab/background.webp";
 import cbcImg from "@/assets/lab/cbc.webp";
 import biochemImg from "@/assets/lab/biochem.webp";
 import proteinImg from "@/assets/lab/protein.webp";
