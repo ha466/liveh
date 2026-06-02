@@ -118,7 +118,7 @@ function HomePage() {
             <span className="inline-flex items-center gap-1.5 rounded-full bg-gold/20 px-3 py-1 text-xs font-semibold text-gold ring-1 ring-gold/40">
               <HeartPulse className="h-3.5 w-3.5" /> Hospital-Grade Equipment
             </span>
-            <h2 className="mt-5 text-3xl font-bold leading-tight md:text-4xl">
+            <h2 className="mt-5 text-3xl font-bold leading-tight md:text-4xl text-slate-100">
               The <span className="text-gold">only PFT machine</span> in Udumalaipettai — plus the region's most advanced ECG, biochemistry analyser and digital microscope.
             </h2>
             <p className="mt-5 text-white/95 md:text-lg">
