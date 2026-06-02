@@ -49,7 +49,7 @@ function HomePage() {
       <section
         className="relative overflow-hidden text-white"
         style={{
-          backgroundImage: `linear-gradient(135deg, color-mix(in oklab, var(--navy) 65%, transparent), color-mix(in oklab, var(--teal) 55%, transparent)), url(${heroBg})`,
+          backgroundImage: `linear-gradient(90deg, color-mix(in oklab, var(--navy) 82%, transparent) 0%, color-mix(in oklab, var(--navy) 55%, transparent) 55%, color-mix(in oklab, var(--navy) 15%, transparent) 100%), url(${heroBg})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundColor: "var(--navy)",
