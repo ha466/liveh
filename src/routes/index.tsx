@@ -90,32 +90,6 @@ function HomePage() {
               ))}
             </div>
           </div>
-
-          {/* Right stat card */}
-          <div className="relative hidden md:block">
-            <div className="relative rounded-2xl bg-white/10 p-8 ring-1 ring-white/20 shadow-card-hover">
-              <div className="grid grid-cols-2 gap-4">
-                {[
-                  { v: "24", l: "Hours Open" },
-                  { v: "96+", l: "Tests in Premium" },
-                  { v: "₹550", l: "Starting Package" },
-                  { v: "100%", l: "Automated" },
-                ].map((s) => (
-                  <div key={s.l} className="rounded-xl bg-white/10 p-5 text-center ring-1 ring-white/10">
-                    <div className="text-3xl font-bold text-white">{s.v}</div>
-                    <div className="mt-1 text-xs uppercase tracking-wider text-light-cyan">{s.l}</div>
-                  </div>
-                ))}
-              </div>
-              <div className="mt-5 rounded-xl bg-navy/40 p-4 text-sm text-white/90">
-                <div className="font-semibold text-white">Need urgent testing?</div>
-                <div className="mt-1">Call our 24-hour line — sample collected in minutes.</div>
-                <a href={`tel:+91${lab.phones[0]}`} className="mt-2 inline-flex items-center gap-1.5 font-semibold text-gold">
-                  <Phone className="h-4 w-4" /> {lab.phones[0]}
-                </a>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
