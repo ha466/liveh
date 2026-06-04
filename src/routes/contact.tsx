@@ -7,10 +7,11 @@ import { Phone, MapPin, Clock, Mail, Send, CheckCircle2 } from "lucide-react";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Live Life Healthcare Lab" },
-      { name: "description", content: "Call 9751504558, 9751744558 or 8190004558. Visit us at 14, Aarthi Complex, Kizhpuram, Udumalaipettai — open 24/7." },
-      { property: "og:title", content: "Contact — Live Life Healthcare Lab" },
-      { property: "og:description", content: "Three 24/7 contact numbers and our Udumalaipettai address." },
+      { title: "Contact — Best Lab in Udumalai | Live Life Healthcare" },
+      { name: "description", content: "Contact the best lab in Udumalai — Live Life Healthcare Lab, Udumalaipettai. Call 9751504558, 9751744558 or 8190004558. Open 24/7." },
+      { name: "keywords", content: "best lab in udumalai, udumalai lab, contact lab udumalaipettai, diagnostic lab phone udumalai, live life lab address" },
+      { property: "og:title", content: "Contact — Best Lab in Udumalai | Live Life Healthcare" },
+      { property: "og:description", content: "Contact the best lab in Udumalai. Three 24/7 phone lines and our Udumalaipettai address." },
     ],
   }),
   component: () => <Layout><Contact /></Layout>,

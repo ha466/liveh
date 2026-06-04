@@ -7,10 +7,11 @@ import { ChevronDown } from "lucide-react";
 export const Route = createFileRoute("/faq")({
   head: () => ({
     meta: [
-      { title: "FAQ — Live Life Healthcare Lab" },
-      { name: "description", content: "Answers about lab hours, home collection, fasting, results, and CMC accreditation at Live Life Healthcare Lab." },
-      { property: "og:title", content: "FAQ — Live Life Healthcare Lab" },
-      { property: "og:description", content: "Common questions about hours, home collection, fasting and results." },
+      { title: "FAQ — Best Lab in Udumalai | Live Life Healthcare" },
+      { name: "description", content: "Frequently asked questions about the best lab in Udumalai. Answers about hours, home collection, fasting, results, and CMC accreditation at Live Life Healthcare Lab, Udumalaipettai." },
+      { name: "keywords", content: "best lab in udumalai, udumalai lab, lab faq udumalai, blood test questions udumalaipettai, home collection udumalai" },
+      { property: "og:title", content: "FAQ — Best Lab in Udumalai | Live Life Healthcare" },
+      { property: "og:description", content: "Common questions about the best lab in Udumalai. Hours, home collection, fasting and results." },
     ],
     scripts: [
       {
