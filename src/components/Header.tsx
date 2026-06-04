@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { Menu, X, Phone } from "lucide-react";
 import { lab } from "@/data/lab";
 import logo from "@/assets/lab/logo.png";
@@ -17,8 +18,10 @@ const nav = [
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const onScroll = () => setScrolled(window.scrollY > 60);
     onScroll();
     window.addEventListener("scroll", onScroll);
@@ -30,6 +33,38 @@ export function Header() {
     return () => { document.body.style.overflow = ""; };
   }, [open]);
 
+  const mobileMenu = open ? (
+    <div className="fixed inset-0 z-[100] overflow-y-auto bg-navy lg:hidden">
+      <div className="flex items-center justify-between px-5 py-4">
+        <div className="text-white font-bold">{lab.name}</div>
+        <button aria-label="Close menu" onClick={() => setOpen(false)} className="text-white p-2">
+          <X className="h-6 w-6" />
+        </button>
+      </div>
+      <nav className="flex flex-col px-5 pt-6 gap-1 pb-10">
+        {nav.map((n) => (
+          <Link
+            key={n.to}
+            to={n.to}
+            onClick={() => setOpen(false)}
+            className="rounded-lg px-4 py-3 text-lg font-medium text-white/90 hover:bg-white/10"
+          >
+            {n.label}
+          </Link>
+        ))}
+        <Link
+          to="/appointments"
+          onClick={() => setOpen(false)}
+          className="mt-4 rounded-lg bg-primary px-4 py-3 text-center text-base font-semibold text-primary-foreground"
+        >
+          Book Appointment
+        </Link>
+        <a href={`tel:+91${lab.phones[0]}`} className="mt-2 rounded-lg border border-white/30 px-4 py-3 text-center text-white">
+          Call {lab.phones[0]}
+        </a>
+      </nav>
+    </div>
+  ) : null;
 
   return (
     <header
@@ -83,38 +118,7 @@ export function Header() {
         </button>
       </div>
 
-      {open && (
-        <div className="fixed inset-0 z-50 overflow-y-auto bg-navy lg:hidden">
-          <div className="flex items-center justify-between px-5 py-4">
-            <div className="text-white font-bold">{lab.name}</div>
-            <button aria-label="Close menu" onClick={() => setOpen(false)} className="text-white p-2">
-              <X className="h-6 w-6" />
-            </button>
-          </div>
-          <nav className="flex flex-col px-5 pt-6 gap-1">
-            {nav.map((n) => (
-              <Link
-                key={n.to}
-                to={n.to}
-                onClick={() => setOpen(false)}
-                className="rounded-lg px-4 py-3 text-lg font-medium text-white/90 hover:bg-white/10"
-              >
-                {n.label}
-              </Link>
-            ))}
-            <Link
-              to="/appointments"
-              onClick={() => setOpen(false)}
-              className="mt-4 rounded-lg bg-primary px-4 py-3 text-center text-base font-semibold text-primary-foreground"
-            >
-              Book Appointment
-            </Link>
-            <a href={`tel:+91${lab.phones[0]}`} className="mt-2 rounded-lg border border-white/30 px-4 py-3 text-center text-white">
-              Call {lab.phones[0]}
-            </a>
-          </nav>
-        </div>
-      )}
+      {mounted && mobileMenu ? createPortal(mobileMenu, document.body) : null}
     </header>
   );
 }
