@@ -10,16 +10,17 @@ const QUAL = "DMLT., DXT.";
 export const Route = createFileRoute("/ambulance")({
   head: () => ({
     meta: [
-      { title: "MK Best Ambulance Udumalpet — 24 Hour Advanced Life Support ICU" },
+      { title: "Best Ambulance in Udumalai — MK Best Ambulance | 24 Hour ICU" },
       {
         name: "description",
         content:
-          "MK Best Ambulance, Udumalpet. 24-hour advanced life support mobile ICU with O2, Ventilator, A/C First Aid and VIP Freezer Box. Call 94434 72989.",
+          "Best ambulance in Udumalai — MK Best Ambulance Udumalpet. 24-hour advanced life support mobile ICU with O2, Ventilator, A/C First Aid and VIP Freezer Box. Call 94434 72989.",
       },
-      { property: "og:title", content: "MK Best Ambulance Udumalpet — 24 Hour ICU Service" },
+      { name: "keywords", content: "best ambulance, best ambulance in udumalai, ambulance udumalai, 24 hour ambulance udumalpet, emergency ambulance udumalai, ambulance service udumalaipettai" },
+      { property: "og:title", content: "Best Ambulance in Udumalai — MK Best Ambulance | 24 Hour ICU" },
       {
         property: "og:description",
-        content: "24-hour advanced life support ambulance with ventilator and O2 facility in Udumalpet.",
+        content: "Best ambulance in Udumalai. 24-hour advanced life support ambulance with ventilator and O2 facility in Udumalpet.",
       },
       { property: "og:image", content: ambulanceAsset.url },
     ],

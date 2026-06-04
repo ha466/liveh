@@ -10,10 +10,11 @@ import protein from "@/assets/lab/protein.webp";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Live Life Healthcare Lab" },
-      { name: "description", content: "CMC-certified diagnostic centre in Udumalaipettai founded by S. SatheeshKumar (DMLT., DXT.). 24/7 service, fully automated testing." },
-      { property: "og:title", content: "About — Live Life Healthcare Lab" },
-      { property: "og:description", content: "CMC-certified diagnostic centre in Udumalaipettai. 24/7 service, fully automated testing." },
+      { title: "About — Best Diagnostic Lab in Udumalai | Live Life" },
+      { name: "description", content: "Learn why Live Life Healthcare Lab is the best lab in Udumalai. CMC-certified diagnostic centre in Udumalaipettai founded by S. SatheeshKumar (DMLT., DXT.). 24/7 service, fully automated testing." },
+      { name: "keywords", content: "best lab in udumalai, udumalai lab, diagnostic lab udumalaipettai, about live life lab" },
+      { property: "og:title", content: "About — Best Diagnostic Lab in Udumalai | Live Life" },
+      { property: "og:description", content: "Best lab in Udumalai. CMC-certified diagnostic centre in Udumalaipettai. 24/7 service, fully automated testing." },
     ],
   }),
   component: () => <Layout><About /></Layout>,

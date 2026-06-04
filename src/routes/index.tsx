@@ -19,10 +19,11 @@ import { waForPackage } from "@/lib/whatsapp";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "24/7 Diagnostic Lab in Udumalaipettai — Live Life" },
-      { name: "description", content: "Fully automated diagnostic lab in Udumalaipettai. Free home collection, 24-hour service, health packages from ₹550." },
-      { property: "og:title", content: "24/7 Diagnostic Lab in Udumalaipettai — Live Life" },
-      { property: "og:description", content: "Free home blood collection. 96+ tests, packages from ₹550. CMC Quality Centre certified." },
+      { title: "Best Lab in Udumalai — Live Life Healthcare | 24/7 Diagnostic Centre" },
+      { name: "description", content: "Best lab in Udumalai — Live Life Healthcare Lab, Udumalaipettai. 24/7 diagnostic centre with free home blood collection, automated testing, health packages from ₹550." },
+      { name: "keywords", content: "best lab in udumalai, udumalai lab, diagnostic lab udumalai, blood test udumalai, health checkup udumalai, udumalaipettai lab" },
+      { property: "og:title", content: "Best Lab in Udumalai — Live Life Healthcare | 24/7 Diagnostic Centre" },
+      { property: "og:description", content: "Best lab in Udumalai. Free home blood collection. 96+ tests, packages from ₹550. CMC Quality Centre certified." },
     ],
     links: [
       { rel: "preload", as: "image", href: heroBg, fetchpriority: "high" },
