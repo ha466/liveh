@@ -40,7 +40,7 @@ const services = [
   { icon: Microscope, name: "Health Packages", desc: "Mini to Premium — 61 to 96 tests in one visit." },
 ];
 
-const featured = packages.filter((p) => ["mini-master", "basic", "regular", "exclusive"].includes(p.slug));
+const featured = packages.filter((p) => ["life-mini-master", "life-basic", "life-regular", "life-exclusive"].includes(p.slug));
 
 function HomePage() {
   return (
