@@ -38,9 +38,9 @@
   --color-gold: var(--gold);
   --color-success: var(--success);
   --color-tamil-accent: var(--tamil-accent);
-  --shadow-card: 0 2px 12px rgba(10,35,66,0.08);
-  --shadow-card-hover: 0 8px 32px rgba(10,35,66,0.16);
-  --shadow-button: 0 4px 14px rgba(26,122,138,0.35);
+  --shadow-card: 0 2px 12px rgba(10, 35, 66, 0.08);
+  --shadow-card-hover: 0 8px 32px rgba(10, 35, 66, 0.16);
+  --shadow-button: 0 4px 14px rgba(26, 122, 138, 0.35);
 }
 
 :root {
@@ -50,7 +50,8 @@
   --card-foreground: oklch(0.18 0.03 260);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.18 0.03 260);
-  --primary: oklch(0.52 0.08 210);          /* teal #1A7A8A */
+  --primary: oklch(0.52 0.08 210);
+  /* teal #1A7A8A */
   --primary-foreground: oklch(1 0 0);
   --secondary: oklch(0.95 0.03 240);
   --secondary-foreground: oklch(0.22 0.07 260);
@@ -64,40 +65,76 @@
   --input: oklch(0.9 0.02 240);
   --ring: oklch(0.52 0.08 210);
 
-  --navy: oklch(0.25 0.08 260);             /* #0A2342 */
-  --teal: oklch(0.55 0.09 210);             /* #1A7A8A */
-  --soft-blue: oklch(0.97 0.02 240);        /* #E8F4FD */
+  --navy: oklch(0.25 0.08 260);
+  /* #0A2342 */
+  --teal: oklch(0.55 0.09 210);
+  /* #1A7A8A */
+  --soft-blue: oklch(0.97 0.02 240);
+  /* #E8F4FD */
   --light-cyan: oklch(0.93 0.05 200);
-  --gold: oklch(0.58 0.13 75);              /* darkened for AA contrast on white */
+  --gold: oklch(0.58 0.13 75);
+  /* darkened for AA contrast on white */
   --success: oklch(0.6 0.15 150);
-  --tamil-accent: oklch(0.5 0.18 30);       /* #C0392B */
+  --tamil-accent: oklch(0.5 0.18 30);
+  /* #C0392B */
 }
 
-.dark { color-scheme: dark; }
+.dark {
+  color-scheme: dark;
+}
 
 @layer base {
-  * { border-color: var(--color-border); }
-  html { scroll-behavior: smooth; }
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
   }
-  h1,h2,h3,h4 { color: var(--color-navy); letter-spacing: -0.02em; }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: var(--color-navy);
+    letter-spacing: -0.02em;
+  }
 }
 
-@utility tamil { font-family: var(--font-tamil); }
+@utility tamil {
+  font-family: var(--font-tamil);
+}
+
 @utility bg-gradient-hero {
   background-image: linear-gradient(135deg, var(--navy) 0%, var(--teal) 100%);
   background-color: var(--navy);
 }
-@utility text-tamil-accent { color: var(--tamil-accent); }
-@utility shadow-card { box-shadow: var(--shadow-card); }
-@utility shadow-card-hover { box-shadow: var(--shadow-card-hover); }
-@utility shadow-button { box-shadow: var(--shadow-button); }
+
+@utility text-tamil-accent {
+  color: var(--tamil-accent);
+}
+
+@utility shadow-card {
+  box-shadow: var(--shadow-card);
+}
+
+@utility shadow-card-hover {
+  box-shadow: var(--shadow-card-hover);
+}
+
+@utility shadow-button {
+  box-shadow: var(--shadow-button);
+}
+
 @utility medical-pattern {
   background-image:
-    radial-gradient(circle at 20% 30%, rgba(255,255,255,0.10) 0, transparent 45%),
-    radial-gradient(circle at 80% 70%, rgba(178,235,242,0.12) 0, transparent 45%);
+    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.10) 0, transparent 45%),
+    radial-gradient(circle at 80% 70%, rgba(178, 235, 242, 0.12) 0, transparent 45%);
 }

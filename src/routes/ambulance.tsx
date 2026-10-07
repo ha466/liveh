@@ -1,9 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
 import { Phone, MessageCircle, Check, Clock, Shield, Heart, Instagram } from "lucide-react";
-import ambulanceAsset from "@/assets/ambulance.jpg.asset.json";
+import ambulanceImg from "@/assets/ambulance.jpeg";
 
-const AMB_PHONES = ["9443472989", "9150113000"];
+const AMB_PHONES = ["9443472989"];
 const OWNER = "T. Murugan";
 const QUAL = "DMLT., DXT.";
 
@@ -22,7 +22,7 @@ export const Route = createFileRoute("/ambulance")({
         property: "og:description",
         content: "Best ambulance in Udumalai. 24-hour advanced life support ambulance with ventilator and O2 facility in Udumalpet.",
       },
-      { property: "og:image", content: ambulanceAsset.url },
+      { property: "og:image", content: ambulanceImg },
     ],
   }),
   component: AmbulancePage,
@@ -42,7 +42,7 @@ function AmbulancePage() {
       <section
         className="relative overflow-hidden text-white"
         style={{
-          backgroundImage: `linear-gradient(135deg, color-mix(in oklab, var(--navy) 78%, transparent), color-mix(in oklab, #c2185b 55%, transparent)), url(${ambulanceAsset.url})`,
+          backgroundImage: `linear-gradient(135deg, color-mix(in oklab, var(--navy) 78%, transparent), color-mix(in oklab, #c2185b 55%, transparent)), url(${ambulanceImg})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundColor: "var(--navy)",
@@ -109,7 +109,7 @@ function AmbulancePage() {
         <div className="grid items-center gap-12 md:grid-cols-2">
           <div className="overflow-hidden rounded-2xl shadow-card-hover">
             <img
-              src={ambulanceAsset.url}
+              src={ambulanceImg}
               alt="MK Best Ambulance Udumalpet — 24 hour advanced life support mobile ICU"
               width="1080"
               height="1920"

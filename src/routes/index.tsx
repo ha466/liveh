@@ -13,7 +13,7 @@ import proteinImg from "@/assets/lab/protein.webp";
 import ecgMachine from "@/assets/ecg-machine.webp";
 import pftMachine from "@/assets/pft-machine.webp";
 import microscopeImg from "@/assets/microscope.webp";
-import ambulanceAsset from "@/assets/ambulance.jpg.asset.json";
+import ambulanceImg from "@/assets/ambulance.jpeg";
 import { waForPackage } from "@/lib/whatsapp";
 
 export const Route = createFileRoute("/")({
@@ -199,7 +199,7 @@ function HomePage() {
       <section
         className="relative overflow-hidden text-white"
         style={{
-          backgroundImage: `linear-gradient(110deg, rgba(13,27,62,0.92) 0%, rgba(13,27,62,0.55) 55%, rgba(13,27,62,0.15) 100%), url(${ambulanceAsset.url})`,
+          backgroundImage: `linear-gradient(110deg, rgba(13,27,62,0.92) 0%, rgba(13,27,62,0.55) 55%, rgba(13,27,62,0.15) 100%), url(${ambulanceImg})`,
           backgroundSize: "cover",
           backgroundPosition: "center right",
           backgroundColor: "var(--navy)",
@@ -222,12 +222,6 @@ function HomePage() {
                 className="inline-flex items-center gap-2 rounded-md bg-gold px-6 py-3 text-sm font-semibold text-navy shadow-button transition hover:scale-[1.02]"
               >
                 <Phone className="h-4 w-4" /> 94434 72989
-              </a>
-              <a
-                href="tel:+919150113000"
-                className="inline-flex items-center gap-2 rounded-md bg-white px-6 py-3 text-sm font-semibold text-navy shadow-button transition hover:scale-[1.02]"
-              >
-                <Phone className="h-4 w-4" /> 91501 13000
               </a>
               <Link
                 to="/ambulance"
